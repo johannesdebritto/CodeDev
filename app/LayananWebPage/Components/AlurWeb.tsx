@@ -1,5 +1,4 @@
 "use client";
-// components/AlurPembuatan.js
 import { useState } from 'react';
 import Image from 'next/image';
 

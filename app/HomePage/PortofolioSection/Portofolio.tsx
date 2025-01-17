@@ -1,5 +1,6 @@
 // components/Portofolio.js
 import React from 'react';
+import Image from 'next/image';
 
 const projects = [
   {
@@ -7,21 +8,21 @@ const projects = [
     title: 'Porto1',
     category: 'Website',
     description: 'Website porto1',
-    image: 'images/icondekstop/bgungu.png',
+    image: '/images/icondekstop/bgungu.png', // Update path to public folder
   },
   {
     id: 2,
     title: 'Porto2',
     category: 'Website',
     description: 'Website porto2',
-    image: 'images/icondekstop/bgbiru.png', // URL gambar
+    image: '/images/icondekstop/bgbiru.png', // Update path to public folder
   },
   {
     id: 3,
     title: 'Porto3',
     category: 'Website',
     description: 'Website porto3',
-    image: 'images/icondekstop/bgpink.png', // URL gambar
+    image: '/images/icondekstop/bgpink.png', // Update path to public folder
   },
 ];
 
@@ -41,9 +42,11 @@ const Portofolio = () => {
             className="border rounded-lg shadow-md flex flex-col items-start w-full max-w-xs mx-auto"
           >
             {/* Gambar Proyek */}
-            <img
-              src={project.image}
+            <Image
+              src={project.image} // Update with correct image path
               alt={project.title}
+              width={400} // Adjust width as needed
+              height={200} // Adjust height as needed
               className="w-full h-32 object-cover rounded-t-lg"
             />
 

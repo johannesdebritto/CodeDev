@@ -1,5 +1,5 @@
 "use client";
-
+import Image from 'next/image';
 import React, { useState, useEffect } from "react";
 
 const Saran = () => {
@@ -133,9 +133,11 @@ const Saran = () => {
             <p className="text-gray-500 mb-6">
               Terima kasih telah memberikan saran Anda. Ini sangat berarti bagi kami!
             </p>
-            <img
-              src="https://via.placeholder.com/150"
+            <Image
+              src="/images/icondekstop/terimakasih.svg"
               alt="Thank You"
+              width={150}
+              height={150} // Dimensi sesuai dengan placeholder
               className="mx-auto"
             />
           </div>

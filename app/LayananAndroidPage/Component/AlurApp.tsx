@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const AlurApp = () => {
   return (
@@ -13,9 +14,11 @@ const AlurApp = () => {
           <div className="flex justify-center items-center bg-blue-500 text-white font-bold w-12 h-12 rounded-full mb-4">
             1
           </div>
-          <img
+          <Image
             src="/images/iconapp/app1.svg"
             alt="Perencanaan dan Desain"
+            width={128} // width for medium devices
+            height={128} // height for medium devices
             className="w-20 md:w-32 mb-4"
           />
           <h2 className="text-lg font-semibold text-black">Perencanaan dan Desain</h2>
@@ -30,9 +33,11 @@ const AlurApp = () => {
           <div className="flex justify-center items-center bg-green-500 text-white font-bold w-12 h-12 rounded-full mb-4">
             2
           </div>
-          <img
+          <Image
             src="/images/iconapp/app2.svg"
             alt="Pengembangan Aplikasi"
+            width={128} // width for medium devices
+            height={128} // height for medium devices
             className="w-20 md:w-32 mb-4"
           />
           <h2 className="text-lg font-semibold text-black">Pengembangan Aplikasi</h2>
@@ -47,9 +52,11 @@ const AlurApp = () => {
           <div className="flex justify-center items-center bg-yellow-500 text-white font-bold w-12 h-12 rounded-full mb-4">
             3
           </div>
-          <img
+          <Image
             src="/images/iconapp/app3.svg"
             alt="Pengujian dan Peluncuran"
+            width={128} // width for medium devices
+            height={128} // height for medium devices
             className="w-20 md:w-32 mb-4"
           />
           <h2 className="text-lg font-semibold text-black">Pengujian dan Peluncuran</h2>

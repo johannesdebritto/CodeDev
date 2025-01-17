@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 
 const HeroSection = () => {
   return (
@@ -42,10 +43,12 @@ const HeroSection = () => {
               <div
                 className="absolute bottom-[-10px] left-1/2 -translate-x-1/2 w-12 h-6 bg-gradient-to-br from-purple-600 to-blue-500 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               ></div>
-              <img
-                src="images/icon/logo_ig.svg"
+              <Image
+                src="/images/icon/logo_ig.svg" // Update with your image path
                 alt="Instagram"
-                className="w-10 h-10 relative z-10"
+                width={40} // Adjust the width as needed
+                height={40} // Adjust the height as needed
+                className="relative z-10"
               />
             </button>
             <button
@@ -56,10 +59,12 @@ const HeroSection = () => {
               <div
                 className="absolute bottom-[-10px] left-1/2 -translate-x-1/2 w-12 h-6 bg-gradient-to-br from-purple-600 to-blue-500 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               ></div>
-              <img
-                src="images/icon/logo_tiktok.svg"
+              <Image
+                src="/images/icon/logo_tiktok.svg" // Update with your image path
                 alt="TikTok"
-                className="w-10 h-10 relative z-10"
+                width={40} // Adjust the width as needed
+                height={40} // Adjust the height as needed
+                className="relative z-10"
               />
             </button>
             <button
@@ -70,10 +75,12 @@ const HeroSection = () => {
               <div
                 className="absolute bottom-[-10px] left-1/2 -translate-x-1/2 w-12 h-6 bg-gradient-to-br from-purple-600 to-blue-500 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               ></div>
-              <img
-                src="images/icon/logo_threats.svg"
+              <Image
+                src="/images/icon/logo_threats.svg" // Update with your image path
                 alt="Threads"
-                className="w-10 h-10 relative z-10"
+                width={40} // Adjust the width as needed
+                height={40} // Adjust the height as needed
+                className="relative z-10"
               />
             </button>
             <button
@@ -84,10 +91,12 @@ const HeroSection = () => {
               <div
                 className="absolute bottom-[-10px] left-1/2 -translate-x-1/2 w-12 h-6 bg-gradient-to-br from-purple-600 to-blue-500 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               ></div>
-              <img
-                src="images/icon/logo_x.svg"
+              <Image
+                src="/images/icon/logo_x.svg" // Update with your image path
                 alt="X"
-                className="w-10 h-10 relative z-10"
+                width={40} // Adjust the width as needed
+                height={40} // Adjust the height as needed
+                className="relative z-10"
               />
             </button>
           </div>
@@ -96,9 +105,11 @@ const HeroSection = () => {
         {/* Right Content (Mockup) */}
         <div className="lg:w-1/2 flex justify-center items-center relative z-0">
           <div className="relative">
-            <img
-              src="images/icon/hero.svg"
+            <Image
+              src="/images/icon/hero.svg" // Update with your image path
               alt="Mockup 1"
+              width={600} // Adjust the width as needed
+              height={600} // Adjust the height as needed
               className="w-full h-full object-cover shadow-none rounded-none"
             />
           </div>

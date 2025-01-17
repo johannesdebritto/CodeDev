@@ -10,8 +10,8 @@ const Layanan = () => {
             Layanan <span className="text-blue-600">CodeDev</span>
           </h1>
           <p className="text-gray-700 text-lg mt-2">
-            "CodeDev menyediakan layanan Mobile Development, Web Development, dan UX/UI Design
-            untuk menciptakan solusi digital yang modern, responsif, dan sesuai kebutuhan Anda."
+            CodeDev menyediakan layanan Mobile Development, Web Development, dan UX/UI Design
+            untuk menciptakan solusi digital yang modern, responsif, dan sesuai kebutuhan Anda.
           </p>
         </div>
 
@@ -46,9 +46,9 @@ const Layanan = () => {
               </h3>
               <hr className="h-0.5 bg-black mb-2 border-0" />
               <p className="text-gray-700 text-justify font-semibold text-[19px]">
-                "Dorong pertumbuhan bisnis Anda dengan aplikasi Android yang dirancang khusus oleh tim
+                Dorong pertumbuhan bisnis Anda dengan aplikasi Android yang dirancang khusus oleh tim
                 profesional kami. Kami menghadirkan solusi inovatif yang sesuai dengan kebutuhan industri,
-                memastikan efisiensi, kemudahan, dan hasil maksimal untuk kesuksesan Anda."
+                memastikan efisiensi, kemudahan, dan hasil maksimal untuk kesuksesan Anda.
               </p>
               {/* Button Lebih Lanjut */}
               <a href="/LayananAndroidPage" className="relative inline-flex items-center justify-center p-4 px-6 py-1 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-purple-500 rounded-full shadow-md group mt-2">
@@ -117,9 +117,9 @@ const Layanan = () => {
               </h3>
               <hr className="h-0.5 bg-black mb-2 border-0" />
               <p className="text-gray-700 text-justify font-semibold text-[19px]">
-                "Tingkatkan kesuksesan bisnis Anda dengan layanan pengembangan website modern dan
+                Tingkatkan kesuksesan bisnis Anda dengan layanan pengembangan website modern dan
                 responsif. Kami menghadirkan solusi web yang dirancang khusus untuk memenuhi kebutuhan
-                industri, membantu meningkatkan visibilitas, efisiensi, dan keberhasilan Anda secara online."
+                industri, membantu meningkatkan visibilitas, efisiensi, dan keberhasilan Anda secara online.
               </p>
               {/* Tombol */}
               <a
@@ -172,9 +172,9 @@ const Layanan = () => {
               </h3>
               <hr className="h-0.5 bg-black mb-2 border-0" />
               <p className="text-gray-700 text-justify font-semibold text-[19px]">
-                "Transformasikan ide Anda menjadi desain UX/UI yang menarik dan fungsional. Kami
+                Transformasikan ide Anda menjadi desain UX/UI yang menarik dan fungsional. Kami
                 menciptakan solusi desain yang fokus pada pengalaman pengguna, memastikan tampilan modern
-                dan interaksi yang intuitif untuk mendukung kesuksesan bisnis Anda."
+                dan interaksi yang intuitif untuk mendukung kesuksesan bisnis Anda.
               </p>
               {/* Button Lebih Lanjut */}
               <a href="/LayananUXUIPage" className="relative inline-flex items-center justify-center p-4 px-6 py-1 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-purple-500 rounded-full shadow-md group mt-2">

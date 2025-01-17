@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const Pencapaian = () => {
   return (
@@ -9,10 +10,12 @@ const Pencapaian = () => {
           <h2 className="text-3xl font-bold text-black flex items-center">
             Pencapaian Code<span className="text-blue-600">Dev</span>
           </h2>
-          <img
-            src="images/icondekstop/piala.svg"
+          <Image
+            src="/images/icondekstop/piala.svg" // Update with your image path
             alt="Icon Pencapaian"
-            className="w-16 h-16 mt-4 sm:mt-0 sm:ml-4 hidden lg:block" // Sembunyikan di layar lg
+            width={64} // Adjust the width as needed
+            height={64} // Adjust the height as needed
+            className="mt-4 sm:mt-0 sm:ml-4 hidden lg:block" // Sembunyikan di layar lg
           />
         </div>
         <p className="text-xl text-gray-900 mb-10 -mt-4">
@@ -31,10 +34,12 @@ const Pencapaian = () => {
               minHeight: '180px', // Menetapkan tinggi minimal card
             }}
           >
-            <img
-              src="images/icon/iconorang.svg"
+            <Image
+              src="/images/icon/iconorang.svg" // Update with your image path
               alt="Klien Loyal"
-              className="absolute top-4 left-4 w-12 h-12"
+              width={48} // Adjust the width as needed
+              height={48} // Adjust the height as needed
+              className="absolute top-4 left-4"
             />
             <h3 className="text-4xl font-bold text-white absolute top-4 left-28">Client</h3>
             <p className="text-white font-medium mt-12 text-4xl">0</p>
@@ -48,10 +53,12 @@ const Pencapaian = () => {
               minHeight: '180px', // Menetapkan tinggi minimal card
             }}
           >
-            <img
-              src="images/icon/iconkepuasan.svg"
+            <Image
+              src="/images/icon/iconkepuasan.svg" // Update with your image path
               alt="Project Dibuat"
-              className="absolute top-4 left-4 w-12 h-12"
+              width={48} // Adjust the width as needed
+              height={48} // Adjust the height as needed
+              className="absolute top-4 left-4"
             />
             <h3 className="text-4xl font-bold text-white absolute top-4 left-28">Project</h3>
             <p className="text-white font-medium mt-12 text-4xl">0</p>
@@ -65,10 +72,12 @@ const Pencapaian = () => {
               minHeight: '180px', // Menetapkan tinggi minimal card
             }}
           >
-            <img
-              src="images/icon/iconkepuasan.svg"
+            <Image
+              src="/images/icon/iconkepuasan.svg" // Update with your image path
               alt="Kepuasan Klien"
-              className="absolute top-4 left-4 w-12 h-12"
+              width={48} // Adjust the width as needed
+              height={48} // Adjust the height as needed
+              className="absolute top-4 left-4"
             />
             <h3 className="text-4xl font-bold text-white absolute top-4 left-28">Kepuasan</h3>
             <p className="text-white font-medium mt-12 text-4xl">0%</p>

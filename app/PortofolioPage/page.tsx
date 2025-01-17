@@ -1,12 +1,12 @@
 "use client";
-
+import Image from 'next/image';
 import React, { useState } from 'react';
 
 const projects = [
-  { id: 1, title: 'Porto1', category: 'Website', description: 'Website porto1', image: 'images/icondekstop/bgungu.png' },
-  { id: 2, title: 'Porto2', category: 'Website', description: 'Website porto2', image: 'images/icondekstop/bgungu.png' },
-  { id: 3, title: 'Porto3', category: 'Android', description: 'Website porto3', image: 'images/icondekstop/bgungu.png' },
-  { id: 4, title: 'Porto4', category: 'UX/UI', description: 'UX/UI Design porto4', image: 'images/icondekstop/bgungu.png' },
+  { id: 1, title: 'Porto1', category: 'Website', description: 'Website porto1', image: '/images/icondekstop/bgungu.png' },
+  { id: 2, title: 'Porto2', category: 'Website', description: 'Website porto2', image: '/images/icondekstop/bgungu.png' },
+  { id: 3, title: 'Porto3', category: 'Android', description: 'Website porto3', image: '/images/icondekstop/bgungu.png' },
+  { id: 4, title: 'Porto4', category: 'UX/UI', description: 'UX/UI Design porto4', image: '/images/icondekstop/bgungu.png' },
 ];
 
 const categories = ['Semua Project', 'Website', 'Android', 'UX/UI'];
@@ -49,11 +49,13 @@ const PortofolioPage = () => {
     onClick={toggleDropdown}
     className="flex items-center gap-2 bg-gray-800 text-white px-4 py-2 rounded-lg shadow-md hover:bg-gray-700 focus:outline-none"
   >
-    <img
-      src="images/icon/filter.png"
-      alt="Filter Icon"
-      className="w-6 h-6"
-    />
+     <Image
+        src="/images/icon/filter.png"
+        alt="Filter Icon"
+        width={24}  // 6 Tailwind units (w-6)
+        height={24} // 6 Tailwind units (h-6)
+        className="w-6 h-6"
+      />
   </button>
   {dropdownOpen && (
     <ul
@@ -86,9 +88,11 @@ const PortofolioPage = () => {
             className="border rounded-lg shadow-md flex flex-col items-start w-full max-w-xs mx-auto"
           >
             {/* Gambar Proyek */}
-            <img
+            <Image
               src={project.image}
               alt={project.title}
+              width={400} // Width sesuai ukuran gambar
+              height={128} // Height sesuai ukuran h-32 (8 Tailwind units)
               className="w-full h-32 object-cover rounded-t-lg"
             />
 

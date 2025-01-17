@@ -1,4 +1,5 @@
 "use client";
+import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 
 const FormPage: React.FC = () => {
@@ -40,11 +41,12 @@ const FormPage: React.FC = () => {
       <div className="flex flex-col lg:flex-row w-full max-w-7xl">
         {/* Left Side (Image) */}
         <div className="w-full lg:w-1/2 bg-gray-200 p-0">
-          <img
-            src="images/icondekstop/pesan.svg"
-            alt="Image"
-            className="w-full h-full object-cover"
-          />
+        <Image
+        src="/images/icondekstop/pesan.svg"
+        alt="Image"
+        layout="fill" // Untuk memastikan gambar memenuhi container
+        objectFit="cover" // Mirip dengan "object-cover" pada Tailwind
+      />
         </div>
 
         {/* Right Side (Form) */}

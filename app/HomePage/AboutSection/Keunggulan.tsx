@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Image from 'next/image';
 const Keunggulan = () => {
   return (
     <section
@@ -12,11 +12,13 @@ const Keunggulan = () => {
           <h2 className="text-3xl font-bold text-white">
             Keunggulan CodeDev
           </h2>
-          <img
-            src="images/icon/iconunggul.svg" // Ganti dengan path gambar Anda
+          <Image
+            src="/images/icon/iconunggul.svg" // Update with your image path
             alt="Icon Keunggulan"
-            className="w-32 h-32 hidden sm:block" // Sembunyikan di layar mobile
-            style={{ marginTop: '-10px' }} // Meninggikan gambar dan mengurangi jarak
+            width={128} // Adjust width as needed
+            height={128} // Adjust height as needed
+            className="hidden sm:block" // Hide on mobile screens
+            style={{ marginTop: '-10px' }} // Adjust margin as needed
           />
         </div>
         {/* Card Section */}
@@ -33,10 +35,12 @@ const Keunggulan = () => {
               <p className="text-sm mb-4 text-center">
                 Kami merancang dan mengembangkan website, aplikasi mobile, dan UX/UI yang sepenuhnya sesuai dengan tujuan dan identitas bisnis Anda.
               </p>
-              <img
-                src="images/icondekstop/solusi.svg"
+              <Image
+                src="/images/icondekstop/solusi.svg"
                 alt="Icon 1"
-                className="w-40 h-40" // Ukuran gambar diperbesar
+                width={160} // Adjust width as needed
+                height={160} // Adjust height as needed
+                className="w-40 h-40" // Optional: Keep or adjust width/height
               />
             </div>
           </div>
@@ -53,10 +57,12 @@ const Keunggulan = () => {
               <p className="text-sm mb-4 text-center">
                 CodeDev menawarkan layanan premium dengan harga yang kompetitif tanpa mengorbankan kualitas, sehingga cocok untuk berbagai skala bisnis.
               </p>
-              <img
-                src="images/icondekstop/harga.svg"
+              <Image
+                src="/images/icondekstop/harga.svg"
                 alt="Icon 2"
-                className="w-40 h-40" // Ukuran gambar diperbesar
+                width={160} // Adjust width as needed
+                height={160} // Adjust height as needed
+                className="w-40 h-40" // Optional: Keep or adjust width/height
               />
             </div>
           </div>
@@ -73,10 +79,12 @@ const Keunggulan = () => {
               <p className="text-sm mb-4 text-center">
                 Kami memanfaatkan teknologi terbaru dan tren desain terkini untuk memastikan hasil yang responsif, modern, dan fungsional di semua perangkat.
               </p>
-              <img
-                src="images/icondekstop/teknologi.svg"
+              <Image
+                src="/images/icondekstop/teknologi.svg"
                 alt="Icon 3"
-                className="w-40 h-40" // Ukuran gambar diperbesar
+                width={160} // Adjust width as needed
+                height={160} // Adjust height as needed
+                className="w-40 h-40" // Optional: Keep or adjust width/height
               />
             </div>
           </div>
@@ -93,10 +101,12 @@ const Keunggulan = () => {
               <p className="text-sm mb-4 text-center">
                 Tim kami selalu siap memberikan dukungan dan solusi, mulai dari konsultasi hingga purna layanan, memastikan pengalaman Anda tetap lancar dan memuaskan.
               </p>
-              <img
-                src="images/icondekstop/dukungan.svg"
+              <Image
+                src="/images/icondekstop/dukungan.svg"
                 alt="Icon 4"
-                className="w-40 h-40" // Ukuran gambar diperbesar
+                width={160} // Adjust width as needed
+                height={160} // Adjust height as needed
+                className="w-40 h-40" // Optional: Keep or adjust width/height
               />
             </div>
           </div>
