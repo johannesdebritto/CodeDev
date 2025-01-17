@@ -50,7 +50,7 @@ const PortofolioPage = () => {
     className="flex items-center gap-2 bg-gray-800 text-white px-4 py-2 rounded-lg shadow-md hover:bg-gray-700 focus:outline-none"
   >
      <Image
-        src="/images/icon/filter.png"
+        src="/images/icon/filter.svg"
         alt="Filter Icon"
         width={24}  // 6 Tailwind units (w-6)
         height={24} // 6 Tailwind units (h-6)
