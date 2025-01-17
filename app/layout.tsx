@@ -1,16 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import "@/app/globals.css"; // Gunakan alias untuk impor global CSS
+import Navbar from "@/app/Components/Navbar"; // Gunakan alias untuk impor Navbar
+import Footer from "@/app/Components/Footer"; // Gunakan alias untuk impor Footer
+import FloatingButtons from "@/app/Components/FloatingButtons"; // Gunakan alias untuk FloatingButtons
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,10 +16,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className="antialiased">
+        {/* Navbar */}
+        <Navbar />
+
+        {/* Konten Halaman */}
+        <main>{children}</main>
+
+        {/* Footer */}
+        <Footer />
+
+        {/* Floating Buttons */}
+        <FloatingButtons />
       </body>
     </html>
   );
