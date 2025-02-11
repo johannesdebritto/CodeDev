@@ -18,3 +18,6 @@
 ## 📌 Catatan
 Saat ini Codev hanya menyediakan layanan **pengembangan frontend**, sehingga integrasi dengan backend akan dilakukan berdasarkan API yang disediakan oleh klien.
 
+
+## LINK
+- https://codedev-app.vercel.app/
