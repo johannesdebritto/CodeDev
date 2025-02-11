@@ -1,5 +1,7 @@
 # Codev - Jasa Pembuatan Aplikasi Mobile (Frontend Only)
 
+![CodeDev Cover](CodeDev_cover.JPG)
+
 ## 📌 Deskripsi
 **Codev** adalah layanan jasa pembuatan aplikasi mobile berbasis frontend menggunakan **TypeScript** dan **Next.js**. Kami berfokus pada pengembangan antarmuka pengguna yang responsif, cepat, dan modern untuk berbagai kebutuhan bisnis dan startup.
 
