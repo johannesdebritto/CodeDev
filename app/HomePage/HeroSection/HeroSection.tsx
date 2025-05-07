@@ -10,7 +10,8 @@ const HeroSection = () => {
         {/* Left Content */}
         <article className="lg:w-1/2 space-y-6 text-center lg:text-left animate-fadeIn delay-100">
           <h1 className="text-3xl lg:text-5xl font-bold leading-tight text-gray-900">
-            Jasa Pembuatan Website, wkwkwkwk <br />
+            Jasa Pembuatan Website,
+            <br />
             Aplikasi Mobile, dan <br />
             Desain UX/UI
           </h1>
