@@ -36,7 +36,7 @@ const HeroSection = () => {
               { label: "TikTok", url: "https://www.tiktok.com", icon: "logo_tiktok.svg" },
               { label: "Threads", url: "https://www.threads.net", icon: "logo_threats.svg" },
               { label: "X", url: "https://www.twitter.com", icon: "logo_x.svg" },
-            ].map((item, index) => (
+            ].map((item) => (
               <button key={item.label} className="relative focus:outline-none transition-transform duration-300 hover:scale-125 group" aria-label={item.label} onClick={() => window.open(item.url, "_blank")}>
                 <div className="absolute bottom-[-10px] left-1/2 -translate-x-1/2 w-12 h-6 bg-gradient-to-br from-purple-600 to-blue-500 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <Image src={`/images/icon/${item.icon}`} alt={item.label} width={40} height={40} className="relative z-10" />
