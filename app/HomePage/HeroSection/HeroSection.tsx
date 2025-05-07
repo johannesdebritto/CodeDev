@@ -5,10 +5,10 @@ import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <section id="home" className="bg-white py-16 pt-32 min-h-screen flex items-center justify-center relative">
-      <div className="container mx-auto px-6 lg:px-12 flex flex-col-reverse lg:flex-row items-center">
+    <section id="home" className="bg-white py-16 pt-32 min-h-screen flex items-center justify-center relative overflow-hidden">
+      <div className="container mx-auto px-6 lg:px-12 flex flex-col-reverse lg:flex-row items-center gap-12">
         {/* Left Content */}
-        <article className="lg:w-1/2 space-y-6 text-center lg:text-left">
+        <article className="lg:w-1/2 space-y-6 text-center lg:text-left animate-fadeIn delay-100">
           <h1 className="text-3xl lg:text-5xl font-bold leading-tight text-gray-900">
             Jasa Pembuatan Website, <br />
             Aplikasi Mobile, dan <br />
@@ -30,61 +30,25 @@ const HeroSection = () => {
           </a>
 
           {/* Social Media Icons */}
-          <div className="flex justify-center lg:justify-start items-center space-x-6 mt-4">
-            <button className="relative focus:outline-none transition-transform duration-300 hover:scale-125 group" aria-label="Instagram" onClick={() => window.open("https://www.instagram.com", "_blank")}>
-              <div className="absolute bottom-[-10px] left-1/2 -translate-x-1/2 w-12 h-6 bg-gradient-to-br from-purple-600 to-blue-500 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <Image
-                src="/images/icon/logo_ig.svg" // Update with your image path
-                alt="Instagram"
-                width={40} // Adjust the width as needed
-                height={40} // Adjust the height as needed
-                className="relative z-10"
-              />
-            </button>
-            <button className="relative focus:outline-none transition-transform duration-300 hover:scale-125 group" aria-label="TikTok" onClick={() => window.open("https://www.tiktok.com", "_blank")}>
-              <div className="absolute bottom-[-10px] left-1/2 -translate-x-1/2 w-12 h-6 bg-gradient-to-br from-purple-600 to-blue-500 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <Image
-                src="/images/icon/logo_tiktok.svg" // Update with your image path
-                alt="TikTok"
-                width={40} // Adjust the width as needed
-                height={40} // Adjust the height as needed
-                className="relative z-10"
-              />
-            </button>
-            <button className="relative focus:outline-none transition-transform duration-300 hover:scale-125 group" aria-label="Threads" onClick={() => window.open("https://www.threads.net", "_blank")}>
-              <div className="absolute bottom-[-10px] left-1/2 -translate-x-1/2 w-12 h-6 bg-gradient-to-br from-purple-600 to-blue-500 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <Image
-                src="/images/icon/logo_threats.svg" // Update with your image path
-                alt="Threads"
-                width={40} // Adjust the width as needed
-                height={40} // Adjust the height as needed
-                className="relative z-10"
-              />
-            </button>
-            <button className="relative focus:outline-none transition-transform duration-300 hover:scale-125 group" aria-label="X" onClick={() => window.open("https://www.threads.net", "_blank")}>
-              <div className="absolute bottom-[-10px] left-1/2 -translate-x-1/2 w-12 h-6 bg-gradient-to-br from-purple-600 to-blue-500 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <Image
-                src="/images/icon/logo_x.svg" // Update with your image path
-                alt="X"
-                width={40} // Adjust the width as needed
-                height={40} // Adjust the height as needed
-                className="relative z-10"
-              />
-            </button>
+          <div className="flex justify-center lg:justify-start items-center space-x-6 mt-4 animate-fadeIn delay-200">
+            {[
+              { label: "Instagram", url: "https://www.instagram.com", icon: "logo_ig.svg" },
+              { label: "TikTok", url: "https://www.tiktok.com", icon: "logo_tiktok.svg" },
+              { label: "Threads", url: "https://www.threads.net", icon: "logo_threats.svg" },
+              { label: "X", url: "https://www.twitter.com", icon: "logo_x.svg" },
+            ].map((item, index) => (
+              <button key={item.label} className="relative focus:outline-none transition-transform duration-300 hover:scale-125 group" aria-label={item.label} onClick={() => window.open(item.url, "_blank")}>
+                <div className="absolute bottom-[-10px] left-1/2 -translate-x-1/2 w-12 h-6 bg-gradient-to-br from-purple-600 to-blue-500 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <Image src={`/images/icon/${item.icon}`} alt={item.label} width={40} height={40} className="relative z-10" />
+              </button>
+            ))}
           </div>
         </article>
 
         {/* Right Content (Mockup) */}
-        <article className="lg:w-1/2 flex justify-center items-center relative z-0">
-          <div className="relative">
-            <Image
-              src="/images/icon/hero.svg" // Update with your image path
-              alt="Mockup 1"
-              width={600} // Adjust the width as needed
-              height={600} // Adjust the height as needed
-              className="w-full h-full object-cover shadow-none rounded-none"
-              priority // Ensures this image is loaded first for better SEO
-            />
+        <article className="lg:w-1/2 flex justify-center items-center relative z-0 animate-fadeIn delay-300">
+          <div className="relative w-full max-w-md lg:max-w-xl h-auto">
+            <Image src="/images/icon/hero.svg" alt="Mockup 1" width={600} height={600} className="w-full h-full object-contain" priority />
           </div>
         </article>
       </div>
