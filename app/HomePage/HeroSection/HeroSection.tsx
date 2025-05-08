@@ -1,12 +1,21 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <section id="home" className="bg-white py-16 pt-32 min-h-screen flex items-center justify-center relative overflow-hidden">
-      <div className="container mx-auto px-6 lg:px-12 flex flex-col-reverse lg:flex-row items-center gap-12">
-        {/* Left Content */}
-        <article className="lg:w-1/2 space-y-6 text-center lg:text-left animate-fadeIn delay-100">
+    <section id="home" className="bg-white pt-32 pb-16 min-h-screen flex items-center justify-center relative overflow-hidden">
+      <div className="container mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        {/* Kolom Gambar - Mobile muncul duluan */}
+        <article className="relative w-full max-w-md lg:max-w-xl h-auto order-1 lg:order-2 animate-fadeIn delay-100">
+          <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px]">
+            <Image src="/images/icon/hero.svg" alt="Mockup 1" fill className="object-contain object-center md:object-right translate-x-0 md:translate-x-2 lg:translate-x-4" priority />
+          </div>
+        </article>
+
+        {/* Kolom Teks */}
+        <article className="order-2 lg:order-1 space-y-6 text-center lg:text-left animate-fadeIn delay-200">
           <h1 className="text-3xl lg:text-5xl font-bold leading-tight text-gray-900">
             Jasa Pembuatan Website,
             <br />
@@ -14,7 +23,7 @@ const HeroSection = () => {
             Desain UX/UI
           </h1>
           <hr className="my-4 border-t-4 border-black" />
-          <p className="text-gray-700 text-xl lg:text-2xl mb-5">
+          <p className="text-gray-700 text-xl lg:text-2xl mb-5 font-medium italic">
             Wujudkan Solusi Digital Terbaik Bersama Code
             <span className="text-blue-800 font-semibold">Dev</span> untuk Bisnis yang Lebih Modern, Efisien, dan Berkembang.
           </p>
@@ -25,11 +34,11 @@ const HeroSection = () => {
               <span className="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 group-hover:-rotate-180 ease"></span>
               <span className="relative">Buat Project</span>
             </span>
-            <span className="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-2xl group-hover:mb-0 group-hover:mr-0" data-rounded="rounded-2xl"></span>
+            <span className="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-2xl group-hover:mb-0 group-hover:mr-0" />
           </a>
 
-          {/* Social Media Icons */}
-          <div className="flex justify-center lg:justify-start items-center space-x-6 mt-4 animate-fadeIn delay-200">
+          {/* Ikon Sosial Media */}
+          <div className="flex justify-center lg:justify-start items-center space-x-6 mt-4 animate-fadeIn delay-300">
             {[
               { label: "Instagram", url: "https://www.instagram.com", icon: "logo_ig.svg" },
               { label: "TikTok", url: "https://www.tiktok.com", icon: "logo_tiktok.svg" },
@@ -37,17 +46,10 @@ const HeroSection = () => {
               { label: "X", url: "https://www.twitter.com", icon: "logo_x.svg" },
             ].map((item) => (
               <button key={item.label} className="relative focus:outline-none transition-transform duration-300 hover:scale-125 group" aria-label={item.label} onClick={() => window.open(item.url, "_blank")}>
-                <div className="absolute bottom-[-10px] left-1/2 -translate-x-1/2 w-12 h-6 bg-gradient-to-br from-purple-600 to-blue-500 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute bottom-[-10px] left-1/2 -translate-x-1/2 w-12 h-6 bg-gradient-to-br from-purple-600 to-blue-500 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <Image src={`/images/icon/${item.icon}`} alt={item.label} width={40} height={40} className="relative z-10" />
               </button>
             ))}
-          </div>
-        </article>
-
-        {/* Right Content (Mockup) */}
-        <article className="lg:w-1/2 flex justify-center items-center relative z-0 animate-fadeIn delay-300">
-          <div className="relative w-full max-w-md lg:max-w-xl h-auto">
-            <Image src="/images/icon/hero.svg" alt="Mockup 1" width={600} height={600} className="w-full h-full object-contain" priority />
           </div>
         </article>
       </div>
