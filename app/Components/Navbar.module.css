@@ -1,87 +1,49 @@
-/* Adjusting the social media buttons size to match the Contact Us button */
+.wrapper {
+  display: flex;
+  gap: 10px;
+}
 
 .wrapper .button {
-    display: inline-block;
-    height: 40px;
-    /* Same size as Contact Us button */
-    width: 40px;
-    /* Same size as Contact Us button */
-    text-decoration: none;
-    margin: 0 5px;
-    overflow: hidden;
-    background: linear-gradient(to bottom right, #9333EA, #3B82F6);
-    /* Gradien dari purple-600 (#9333EA) ke blue-500 (#3B82F6) */
-    border-radius: 50px;
-    cursor: pointer;
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-out;
-    position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  text-decoration: none;
+  margin: 0 5px;
+  overflow: hidden;
+  background: linear-gradient(to bottom right, #9333ea, #3b82f6);
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-out;
+  position: relative;
+  color: white;
 }
-
-
-/* Hover effect: Expand to match Contact Us button */
 
 .wrapper .button:hover {
-    width: 150px;
+  width: 150px;
+  transform: scale(1.05);
 }
-
-
-/* Icon styling (replace with image) */
 
 .wrapper .button .icon {
-    display: inline-block;
-    height: 40px;
-    width: 40px;
-    color: #000;
-    text-align: center;
-    line-height: 10px;
-    transition: all 0.3s ease-out;
-    background-size: cover;
-    background-position: center;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  margin-right: 8px;
+  flex-shrink: 0;
 }
-
-
-/* Change background color on hover for each button */
-
-
-/* Set initial text color for each button */
-
-.wrapper .button:nth-child(1) span {
-    color: #ffffff;
-}
-
-.wrapper .button:nth-child(2) span {
-    color: #ffffff;
-}
-
-
-/* Ensuring buttons inside wrapper have same effect as Contact Us button */
-
-.wrapper .button:hover {
-    transform: scale(1.05);
-    /* Slight enlarge effect */
-}
-
-
-/* Default state: Hide span text */
 
 .wrapper .button span {
-    opacity: 0;
-    visibility: hidden;
-    font-size: 15px;
-    font-weight: 500;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    transition: all 0.3s ease-out;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: all 0.3s ease-out;
 }
 
-
-/* Hover state: Show span text */
-
 .wrapper .button:hover span {
-    opacity: 1;
-    visibility: visible;
+  opacity: 1;
+  visibility: visible;
 }

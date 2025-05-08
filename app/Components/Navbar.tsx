@@ -3,27 +3,15 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import Link from "next/link";
-import styles from "./Navbar.module.css";
 
 const Navbar: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const toggleMenu = (): void => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const closeMenu = (): void => {
-    setIsMenuOpen(false);
-  };
-
-  const toggleDropdown = (): void => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
-
-  const closeDropdown = (): void => {
-    setIsDropdownOpen(false);
-  };
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
+  const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
+  const closeDropdown = () => setIsDropdownOpen(false);
 
   return (
     <nav
@@ -42,7 +30,7 @@ const Navbar: React.FC = () => {
           </span>
         </Link>
 
-        {/* Hamburger Icon */}
+        {/* Hamburger */}
         <div className="md:hidden">
           <button onClick={toggleMenu} className="text-gray-800 focus:outline-none">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8">
@@ -51,26 +39,19 @@ const Navbar: React.FC = () => {
           </button>
         </div>
 
-        {/* Menu */}
+        {/* Menu Desktop */}
         <div className="hidden md:flex items-center space-x-8 flex-grow justify-center">
           <ul className="flex space-x-6 text-gray-700 font-medium">
-            {"Home Layanan Portfolio".split(" ").map((item, idx) => (
+            {["Home", "Layanan", "Portfolio"].map((item, idx) => (
               <li key={idx} className="relative group">
-                {/* Layanan with dropdown */}
                 {item === "Layanan" ? (
                   <button onClick={toggleDropdown} className="hover:text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-500 text-gray-700 transition-all duration-300 group-hover:scale-105 focus:outline-none">
                     Layanan
                   </button>
                 ) : (
                   <Link
-                    href={
-                      item === "Home"
-                        ? "/" // Direct to root for "Home"
-                        : item === "Portfolio"
-                        ? "/PortofolioPage"
-                        : `#${item.toLowerCase()}`
-                    }
-                    scroll={item !== "Home"} // Prevent scroll for "Home" since it's a root navigation
+                    href={item === "Home" ? "/" : item === "Portfolio" ? "/PortofolioPage" : `#${item.toLowerCase()}`}
+                    scroll={item !== "Home"}
                     className="hover:text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-500 text-gray-700 transition-all duration-300 group-hover:scale-105"
                   >
                     {item}
@@ -79,7 +60,6 @@ const Navbar: React.FC = () => {
 
                 <span className="absolute left-1/2 bottom-0 w-0 h-[2px] bg-gradient-to-r from-purple-600 to-blue-500 group-hover:w-full group-hover:left-0 transition-all duration-300"></span>
 
-                {/* Dropdown Content */}
                 {item === "Layanan" && isDropdownOpen && (
                   <ul className="absolute left-[50%] transform -translate-x-1/2 top-full mt-2 w-48 bg-gradient-to-r from-purple-600 to-blue-500 shadow-lg rounded-lg z-10">
                     {[
@@ -97,6 +77,8 @@ const Navbar: React.FC = () => {
               </li>
             ))}
           </ul>
+
+          {/* Contact Us */}
           <Link
             href="#contact"
             scroll={false}
@@ -107,15 +89,14 @@ const Navbar: React.FC = () => {
           </Link>
         </div>
 
-        {/* Chatbot and Suggestion Box */}
-        <div className={`${styles.wrapper} hidden md:flex items-center space-x-4`}>
-          <a href="#" className={`${styles.button} text-white`}>
-            <div className={styles.icon} style={{ backgroundImage: "url(/images/icon/chatbot.svg)" }}></div>
+        {/* Chatbot & Saran */}
+        <div className="hidden md:flex items-center space-x-4">
+          <Link href="#" className="flex items-center space-x-2 text-white bg-blue-600 px-4 py-2 rounded-lg hover:scale-105 transition-all">
+            <Image src="/images/icon/chatbot.svg" alt="Chatbot" width={24} height={24} priority />
             <span>Chatbot</span>
-          </a>
-
-          <Link href="/SaranSection" className={`${styles.button} text-white`}>
-            <div className={styles.icon} style={{ backgroundImage: "url(/images/icon/saran.svg)" }}></div>
+          </Link>
+          <Link href="/SaranSection" className="flex items-center space-x-2 text-white bg-blue-600 px-4 py-2 rounded-lg hover:scale-105 transition-all">
+            <Image src="/images/icon/saran.svg" alt="Kotak Saran" width={24} height={24} priority />
             <span>Kotak Saran</span>
           </Link>
         </div>
@@ -131,20 +112,17 @@ const Navbar: React.FC = () => {
           </button>
 
           <ul className="flex flex-col items-center space-y-4 text-center text-gray-800 font-medium w-full px-4">
-            {/* Home link */}
             <li className="w-full">
               <Link href="/" onClick={closeMenu} className="block text-white transition-all duration-300 text-2xl hover:scale-105">
                 Home
               </Link>
             </li>
 
-            {/* Layanan link with dropdown */}
             <li className="w-full">
               <button onClick={toggleDropdown} className="block w-full text-white transition-all duration-300 text-2xl hover:scale-105 text-center">
                 Layanan
               </button>
 
-              {/* Dropdown Menu */}
               {isDropdownOpen && (
                 <ul className="mt-2 w-full bg-gradient-to-r from-purple-600 to-blue-500 shadow-lg rounded-lg space-y-2 px-4 py-2">
                   {[
@@ -168,7 +146,6 @@ const Navbar: React.FC = () => {
               )}
             </li>
 
-            {/* Portfolio link */}
             <li className="w-full">
               <Link href="/PortofolioPage" onClick={closeMenu} className="block text-white transition-all duration-300 text-2xl hover:scale-105">
                 Portfolio
