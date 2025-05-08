@@ -7,13 +7,11 @@ const HeroSection = () => {
       <div className="container mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Kolom Gambar - Mobile muncul duluan */}
         <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden order-1 md:order-2">
-          <Image src="/images/eco1.svg" alt="Ilustrasi Maggot BSF Colomadu" fill className="object-contain object-center md:object-right translate-x-0 md:translate-x-2 lg:translate-x-4 animate-fadeIn delay-100" priority />
+          <Image src="/images/eco1.svg" alt="Ilustrasi Maggot BSF Colomadu" fill className="object-contain object-center md:object-right translate-x-0 md:translate-x-2 lg:translate-x-4" priority />
         </div>
-        {/*  */}
 
-        {/*  */}
         {/* Kolom Teks */}
-        <article className="order-2 lg:order-1 space-y-6 text-center lg:text-left animate-fadeIn delay-200">
+        <article className="order-2 lg:order-1 space-y-6 text-center lg:text-left">
           <h1 className="text-3xl lg:text-5xl font-bold leading-tight text-gray-900">
             Jasa Pembuatan Website,
             <br />
@@ -36,7 +34,7 @@ const HeroSection = () => {
           </a>
 
           {/* Ikon Sosial Media */}
-          <div className="flex justify-center lg:justify-start items-center space-x-6 mt-4 animate-fadeIn delay-300">
+          <div className="flex justify-center lg:justify-start items-center space-x-6 mt-4">
             {[
               { label: "Instagram", url: "https://www.instagram.com", icon: "logo_ig.svg" },
               { label: "TikTok", url: "https://www.tiktok.com", icon: "logo_tiktok.svg" },
