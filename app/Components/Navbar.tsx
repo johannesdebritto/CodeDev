@@ -102,7 +102,7 @@ const Navbar: React.FC = () => {
             scroll={false}
             className="flex items-center space-x-2 text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl hover:scale-105 focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-transform duration-300"
           >
-            <Image src="/images/icon/logo_wawhite.svg" alt="WhatsApp" width={20} height={20} className="object-contain" priority />
+            <Image src="/images/logo_wa.svg" alt="WhatsApp" width={20} height={20} className="object-contain" priority />
             <span>Contact Us</span>
           </Link>
         </div>
