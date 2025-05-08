@@ -2,31 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 :root {
-    --background: #ffffff;
-    --foreground: #171717;
-    --font-poppins: 'Poppins', sans-serif;
-    /* Font untuk heading */
-    --font-roboto: 'Roboto', sans-serif;
-    /* Font untuk body */
+  --background: #ffffff;
+  --foreground: #171717;
+  --font-poppins: "Poppins", sans-serif;
+  /* Font untuk heading */
+  --font-roboto: "Roboto", sans-serif;
+  /* Font untuk body */
 }
 
 @media (prefers-color-scheme: dark) {
-     :root {
-        --background: #0a0a0a;
-        --foreground: #ededed;
-    }
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
 }
-
 
 /* Menetapkan warna latar belakang dan teks */
 
 body {
-    color: var(--foreground);
-    background: var(--background);
-    font-family: var(--font-inter);
-    /* Default font untuk body adalah Roboto */
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-inter);
+  /* Default font untuk body adalah Roboto */
 }
-
 
 /* Menetapkan font pada elemen heading */
 
@@ -36,26 +34,37 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: var(--font-inter);
-    /* Heading menggunakan Poppins */
+  font-family: var(--font-inter);
+  /* Heading menggunakan Poppins */
 }
-
 
 /* Menetapkan font pada elemen paragraf */
 
 p {
-    font-family: var(--font-inter);
-    /* Paragraf menggunakan Roboto */
+  font-family: var(--font-inter);
+  /* Paragraf menggunakan Roboto */
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
-
 
 /* Tambahkan ini di styles/global.css */
 
 .scroll-offset {
-    scroll-margin-top: 100px;
-    /* Sesuaikan dengan tinggi navbar Anda */
+  scroll-margin-top: 100px;
+  /* Sesuaikan dengan tinggi navbar Anda */
+}
+
+@layer utilities {
+  .animate-fadeIn {
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0;
+  }
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
