@@ -8,16 +8,16 @@ const HeroSection = () => {
         {/* Kolom Gambar - Mobile muncul duluan */}
         <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden order-1 md:order-2">
           <Image
-            src="/images/eco1.svg"
+            src="/images/icon/hero.svg"
             alt="Ilustrasi Maggot BSF Colomadu"
             fill
-            className="object-contain object-center md:object-right opacity-0 translate-x-4 md:translate-x-8 lg:translate-x-12 transition-all duration-1000 ease-in-out animate-fadeIn"
+            className="object-contain object-center md:object-right opacity-0 -translate-x-4 md:-translate-x-8 lg:-translate-x-12 transition-all duration-1000 ease-in-out animate-fadeIn"
             priority
           />
         </div>
 
         {/* Kolom Teks */}
-        <article className="order-2 lg:order-1 space-y-6 text-center lg:text-left opacity-0 translate-x-4 md:translate-x-8 lg:translate-x-12 transition-all duration-1000 ease-in-out animate-fadeIn">
+        <article className="order-2 lg:order-1 space-y-6 text-center lg:text-left opacity-0 transition-opacity duration-1000 ease-in-out animate-fadeIn">
           <h1 className="text-3xl lg:text-5xl font-bold leading-tight text-gray-900">
             Jasa Pembuatan Website,
             <br />
