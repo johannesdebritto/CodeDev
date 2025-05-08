@@ -19,6 +19,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Preload Images */}
+        <link rel="preload" href="/images/logo/logo.svg" as="image" />
+
+        <link rel="preload" href="/images/logo_wa.svg" as="image" />
+      </head>
+
       <body className="antialiased">
         {/* Navbar */}
         <Navbar />
