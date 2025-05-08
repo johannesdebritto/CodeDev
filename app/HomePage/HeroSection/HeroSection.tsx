@@ -7,17 +7,11 @@ const HeroSection = () => {
       <div className="container mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Kolom Gambar - Mobile muncul duluan */}
         <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden order-1 md:order-2">
-          <Image
-            src="/images/icon/hero.svg"
-            alt="Ilustrasi Maggot BSF Colomadu"
-            fill
-            className="object-contain object-center md:object-right opacity-0 -translate-x-4 md:-translate-x-8 lg:-translate-x-12 transition-all duration-1000 ease-in-out animate-fadeIn"
-            priority
-          />
+          <Image src="/images/icon/hero.svg" alt="Ilustrasi Maggot BSF Colomadu" fill className="object-contain object-center" priority />
         </div>
 
         {/* Kolom Teks */}
-        <article className="order-2 lg:order-1 space-y-6 text-center lg:text-left opacity-0 transition-opacity duration-1000 ease-in-out animate-fadeIn">
+        <article className="order-2 lg:order-1 space-y-6 text-center lg:text-left">
           <h1 className="text-3xl lg:text-5xl font-bold leading-tight text-gray-900">
             Jasa Pembuatan Website,
             <br />
@@ -42,10 +36,26 @@ const HeroSection = () => {
           {/* Ikon Sosial Media */}
           <div className="flex justify-center lg:justify-start items-center space-x-6 mt-4">
             {[
-              { label: "Instagram", url: "https://www.instagram.com", icon: "logo_ig.svg" },
-              { label: "TikTok", url: "https://www.tiktok.com", icon: "logo_tiktok.svg" },
-              { label: "Threads", url: "https://www.threads.net", icon: "logo_threats.svg" },
-              { label: "X", url: "https://www.twitter.com", icon: "logo_x.svg" },
+              {
+                label: "Instagram",
+                url: "https://www.instagram.com",
+                icon: "logo_ig.svg",
+              },
+              {
+                label: "TikTok",
+                url: "https://www.tiktok.com",
+                icon: "logo_tiktok.svg",
+              },
+              {
+                label: "Threads",
+                url: "https://www.threads.net",
+                icon: "logo_threats.svg",
+              },
+              {
+                label: "X",
+                url: "https://www.twitter.com",
+                icon: "logo_x.svg",
+              },
             ].map((item) => (
               <a key={item.label} href={item.url} target="_blank" rel="noopener noreferrer" aria-label={item.label} className="relative focus:outline-none transition-transform duration-300 hover:scale-125 group">
                 <div className="absolute bottom-[-10px] left-1/2 -translate-x-1/2 w-12 h-6 bg-gradient-to-br from-purple-600 to-blue-500 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
