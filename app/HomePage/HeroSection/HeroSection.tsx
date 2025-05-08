@@ -6,9 +6,9 @@ const HeroSection = () => {
     <section id="home" className="bg-white pt-32 pb-16 min-h-screen flex items-center justify-center relative overflow-hidden">
       <div className="container mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Kolom Gambar - Mobile muncul duluan */}
-        <article className="relative w-full max-w-md lg:max-w-xl h-auto order-1 lg:order-2 animate-fadeIn delay-100">
-          <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px]">
-            <Image src="/images/icon/hero.svg" alt="Mockup 1" fill className="object-contain object-center md:object-right translate-x-0 md:translate-x-2 lg:translate-x-4" priority />
+        <article className="order-1 lg:order-2">
+          <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden">
+            <Image src="/images/icon/hero.svg" alt="Mockup 1" fill priority className="object-contain object-center md:object-right translate-x-0 md:translate-x-2 lg:translate-x-4 animate-fadeIn delay-100" />
           </div>
         </article>
 
