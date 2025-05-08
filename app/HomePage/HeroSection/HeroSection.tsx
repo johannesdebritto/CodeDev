@@ -6,12 +6,12 @@ const HeroSection = () => {
     <section id="home" className="bg-white pt-32 pb-16 min-h-screen flex items-center justify-center relative overflow-hidden">
       <div className="container mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Kolom Gambar - Mobile muncul duluan */}
-        <article className="order-1 lg:order-2">
-          <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden">
-            <Image src="/images/icon/hero.svg" alt="Mockup 1" fill priority className="object-contain object-center md:object-right translate-x-0 md:translate-x-2 lg:translate-x-4 animate-fadeIn delay-100" />
-          </div>
-        </article>
+        <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden order-1 md:order-2">
+          <Image src="/images/icon/hero.svg" alt="Ilustrasi Maggot BSF Colomadu" fill className="object-contain object-center md:object-right translate-x-0 md:translate-x-2 lg:translate-x-4 animate-fadeIn delay-100" priority />
+        </div>
+        {/*  */}
 
+        {/*  */}
         {/* Kolom Teks */}
         <article className="order-2 lg:order-1 space-y-6 text-center lg:text-left animate-fadeIn delay-200">
           <h1 className="text-3xl lg:text-5xl font-bold leading-tight text-gray-900">
