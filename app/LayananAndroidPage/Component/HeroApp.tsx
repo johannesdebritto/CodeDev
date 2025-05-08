@@ -11,7 +11,7 @@ const HeroApp = () => {
         </div>
 
         {/* Konten Utama */}
-        <article className="sm:col-span-7 space-y-4" aria-labelledby="hero-heading">
+        <article className="sm:col-span-7 space-y-4 animate-fadeIn" aria-labelledby="hero-heading">
           <header>
             <h1 id="hero-heading" className="text-2xl font-semibold text-black">
               Pengembangan Aplikasi Android Modern dengan Fokus pada Pengalaman Pengguna dan Harga Terjangkau
