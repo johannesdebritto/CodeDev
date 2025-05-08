@@ -8,7 +8,7 @@ const HeroSection = () => {
         {/* Kolom Gambar - Mobile muncul duluan */}
         <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden order-1 md:order-2">
           <Image
-            src="/images/eco1.svg"
+            src="/images/icon/hero.svg"
             alt="Ilustrasi Maggot BSF Colomadu"
             fill
             className="object-contain object-center md:object-right opacity-0 translate-x-4 md:translate-x-8 lg:translate-x-12 transition-all duration-1000 ease-in-out animate-fadeIn"
