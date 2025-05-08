@@ -3,53 +3,45 @@ import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <section id="home" className="bg-white pt-32 pb-16 min-h-screen flex items-center justify-center relative overflow-hidden">
-      <div className="container mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        {/* Kolom Gambar - Mobile muncul duluan */}
+    <section id="beranda" className="scroll-mt-20 min-h-screen flex items-start bg-white px-8 py-10 relative overflow-hidden" aria-label="Halaman utama Maggot BSF Colomadu">
+      <div className="grid grid-cols-1 md:grid-cols-2 max-w-6xl mx-auto w-full gap-8 relative">
+        {/* Kolom Gambar - muncul duluan di mobile */}
         <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden order-1 md:order-2">
           <Image src="/images/icon/hero.svg" alt="Ilustrasi Maggot BSF Colomadu" fill className="object-contain object-center md:object-right translate-x-0 md:translate-x-2 lg:translate-x-4 animate-fadeIn delay-100" priority />
         </div>
-        {/*  */}
 
-        {/*  */}
         {/* Kolom Teks */}
-        <article className="order-2 lg:order-1 space-y-6 text-center lg:text-left animate-fadeIn delay-200">
-          <h1 className="text-3xl lg:text-5xl font-bold leading-tight text-gray-900">
-            Jasa Pembuatan Website,
-            <br />
-            Aplikasi Mobile, dan <br />
-            Desain UX/UI
-          </h1>
-          <hr className="my-4 border-t-4 border-black" />
-          <p className="text-gray-700 text-xl lg:text-2xl mb-5 font-medium italic">
-            Wujudkan Solusi Digital Terbaik Bersama Code
-            <span className="text-blue-800 font-semibold">Dev</span> untuk Bisnis yang Lebih Modern, Efisien, dan Berkembang.
-          </p>
+        <div className="flex flex-col justify-center z-10 relative order-2 md:order-1">
+          {/* Dekorasi - hanya muncul di md ke atas */}
+          {/* <div aria-hidden="true">
+              <Image src="/images/eco1.svg" alt="" width={112} height={112} className="absolute top-2 left-0 opacity-50 animate-fadeIn hidden md:block" />
+              <Image src="/images/eco2.svg" alt="" width={96} height={96} className="absolute top-[3.75rem] right-4 opacity-60 animate-fadeIn delay-100 hidden md:block" />
+              <Image src="/images/eco5.svg" alt="" width={72} height={72} className="absolute bottom-5 left-6 opacity-40 animate-fadeIn delay-700 hidden md:block" />
+              <Image src="/images/eco4.svg" alt="" width={88} height={88} className="absolute bottom-20 right-4 opacity-60 animate-fadeIn delay-[800ms] hidden md:block" />
+            </div> */}
 
-          <a href="#layanan" className="relative inline-block text-lg group">
-            <span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-2xl group-hover:text-white">
-              <span className="absolute inset-0 w-full h-full px-5 py-3 rounded-2xl bg-gray-50"></span>
-              <span className="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 group-hover:-rotate-180 ease"></span>
-              <span className="relative">Buat Project</span>
-            </span>
-            <span className="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-2xl group-hover:mb-0 group-hover:mr-0" />
+          {/* Pengunjung */}
+          {/* <div className="flex items-center gap-2 text-black text-sm mb-2 relative z-10">
+              <Eye className="w-4 h-4" aria-hidden="true" />
+              <span className="font-semibold">0 pengunjung</span>
+            </div> */}
+
+          {/* Judul dan deskripsi */}
+          <h1 className="text-4xl md:text-5xl font-bold text-green-800 mb-2 relative z-10 ">Selamat Datang di Maggot BSF Colomadu</h1>
+
+          <p className="text-base md:text-lg text-black mb-4 font-semibold italic relative z-10">&ldquo;Ubah Sampah sebagai cuan – solusi ramah lingkungan untuk pakan ternak dan pengelolaan limbah organik.&rdquo;</p>
+
+          {/* Tombol WhatsApp */}
+          <a
+            href="https://wa.me/6283170416820" // ← ganti dengan nomor WA beneran kamu
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-6 py-3 bg-green-700 text-white font-bold rounded-2xl transform hover:scale-105 hover:shadow-[0_8px_20px_rgba(0,128,0,0.4)] transition duration-300 ease-in-out text-base w-fit relative z-10"
+          >
+            <Image src="/images/wa.svg" alt="WhatsApp" width={20} height={20} />
+            Hubungi Kami
           </a>
-
-          {/* Ikon Sosial Media */}
-          <div className="flex justify-center lg:justify-start items-center space-x-6 mt-4 animate-fadeIn delay-300">
-            {[
-              { label: "Instagram", url: "https://www.instagram.com", icon: "logo_ig.svg" },
-              { label: "TikTok", url: "https://www.tiktok.com", icon: "logo_tiktok.svg" },
-              { label: "Threads", url: "https://www.threads.net", icon: "logo_threats.svg" },
-              { label: "X", url: "https://www.twitter.com", icon: "logo_x.svg" },
-            ].map((item) => (
-              <a key={item.label} href={item.url} target="_blank" rel="noopener noreferrer" aria-label={item.label} className="relative focus:outline-none transition-transform duration-300 hover:scale-125 group">
-                <div className="absolute bottom-[-10px] left-1/2 -translate-x-1/2 w-12 h-6 bg-gradient-to-br from-purple-600 to-blue-500 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <Image src={`/images/icon/${item.icon}`} alt={item.label} width={40} height={40} className="relative z-10" />
-              </a>
-            ))}
-          </div>
-        </article>
+        </div>
       </div>
     </section>
   );
