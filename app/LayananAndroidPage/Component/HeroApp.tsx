@@ -22,19 +22,19 @@ const HeroApp = () => {
           {/* Fitur-fitur */}
           <div className="mt-10 grid grid-cols-2 gap-6 text-gray-800" aria-label="Fitur Aplikasi">
             <div className="flex items-center space-x-3">
-              <Image src="/images/iconapp/cerdas.svg" alt="Aplikasi Cerdas" width={56} height={56} className="w-[3.50rem] h-[3.50rem]" priority />
+              <img src="/images/iconapp/cerdas.svg" alt="Aplikasi Cerdas" className="w-[3.5rem] h-[3.5rem]" loading="eager" />
               <span className="text-lg font-bold">Aplikasi Cerdas</span>
             </div>
             <div className="flex items-center space-x-3">
-              <Image src="/images/iconapp/modern.svg" alt="Desain Modern" width={56} height={56} className="w-[3.50rem] h-[3.50rem]" priority />
+              <img src="/images/iconapp/modern.svg" alt="Desain Modern" className="w-[3.5rem] h-[3.5rem]" loading="eager" />
               <span className="text-lg font-bold">Desain Modern</span>
             </div>
             <div className="flex items-center space-x-3">
-              <Image src="/images/iconapp/solusi.svg" alt="Solusi Praktis" width={56} height={56} className="w-[3.50rem] h-[3.50rem]" priority />
+              <img src="/images/iconapp/solusi.svg" alt="Solusi Praktis" className="w-[3.5rem] h-[3.5rem]" loading="eager" />
               <span className="text-lg font-bold">Solusi Praktis</span>
             </div>
             <div className="flex items-center space-x-3">
-              <Image src="/images/iconweb/terjangkau.svg" alt="Harga Terjangkau" width={56} height={56} className="w-[3.50rem] h-[3.50rem]" priority />
+              <img src="/images/iconweb/terjangkau.svg" alt="Harga Terjangkau" className="w-[3.5rem] h-[3.5rem]" loading="eager" />
               <span className="text-lg font-bold">Terjangkau</span>
             </div>
           </div>
