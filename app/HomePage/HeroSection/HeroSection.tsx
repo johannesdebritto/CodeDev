@@ -20,12 +20,6 @@ const HeroSection = () => {
             <Image src="/images/eco4.svg" alt="" width={88} height={88} className="absolute bottom-20 right-4 opacity-60 animate-fadeIn delay-[800ms] hidden md:block" />
           </div>
 
-          {/* Pengunjung */}
-          <div className="flex items-center gap-2 text-black text-sm mb-2 relative z-10">
-            <Eye className="w-4 h-4" aria-hidden="true" />
-            <span className="font-semibold">0 pengunjung</span>
-          </div>
-
           {/* Judul dan deskripsi */}
           <h1 className="text-4xl md:text-5xl font-bold text-green-800 mb-2 relative z-10 ">Selamat Datang di Maggot BSF Colomadu</h1>
 
