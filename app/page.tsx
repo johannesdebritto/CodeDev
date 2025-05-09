@@ -20,8 +20,7 @@ export const metadata = {
 };
 
 export default async function Home() {
-  // Simulasi loading, bisa dihapus nanti
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  await new Promise((r) => setTimeout(r, 2000)); // delay 1 detik
 
   return (
     <main>
