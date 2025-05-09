@@ -1,3 +1,4 @@
+// app/loading.tsx
 export default function Loading() {
   return (
     <div
@@ -7,6 +8,11 @@ export default function Loading() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        position: "absolute",
+        top: "0",
+        left: "0",
+        width: "100%",
+        zIndex: "9999",
       }}
     >
       <p>Loading...</p>
