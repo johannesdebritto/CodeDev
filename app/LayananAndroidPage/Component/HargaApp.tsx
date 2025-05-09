@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/link";
+
 import Image from "next/image";
 
 const HargaApp = () => {
@@ -37,9 +37,6 @@ const HargaApp = () => {
           </ul>
           <footer>
             <p className="text-sm text-gray-500 mt-4 font-bold">Keterangan: *Fitur tambahan akan dikenakan biaya tambahan.</p>
-            <Link href="/FormPage">
-              <button className="mt-6 w-full bg-blue-500 text-white py-2 rounded-lg transform transition-transform hover:scale-105">Choose</button>
-            </Link>
           </footer>
         </article>
 
@@ -60,9 +57,6 @@ const HargaApp = () => {
           </ul>
           <footer>
             <p className="text-sm text-gray-500 mt-4 font-bold">Keterangan: *Fitur tambahan akan dikenakan biaya tambahan.</p>
-            <Link href="/FormPage">
-              <button className="mt-6 w-full bg-blue-500 text-white py-2 rounded-lg transform transition-transform hover:scale-105">Choose</button>
-            </Link>
           </footer>
         </article>
 
@@ -93,9 +87,6 @@ const HargaApp = () => {
           </ul>
           <footer>
             <p className="text-sm text-gray-500 mt-4 font-bold">Keterangan: *Fitur tambahan akan dikenakan biaya tambahan.</p>
-            <Link href="/FormPage">
-              <button className="mt-6 w-full bg-blue-500 text-white py-2 rounded-lg transform transition-transform hover:scale-105">Choose</button>
-            </Link>
           </footer>
         </article>
       </div>
