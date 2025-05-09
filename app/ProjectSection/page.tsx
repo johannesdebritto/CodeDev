@@ -13,10 +13,6 @@ const ProjectPage: React.FC = () => {
     setFormSubmitted(true); // Menyembunyikan form dan menampilkan kartu
   };
 
-  const handleCardSelect = (type: "web" | "app") => {
-    setSelectedType(type); // Menyimpan jenis layanan yang dipilih
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center px-4">
       <div className="p-8 text-center w-full max-w-3xl">
