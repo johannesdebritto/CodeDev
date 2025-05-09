@@ -1,15 +1,15 @@
-"use client"; // Tambahkan ini di bagian atas
+"use client";
 
 import { useEffect, useState } from "react";
-import Lottie from "react-lottie";
+import Lottie, { Options } from "react-lottie";
 
 const LoadingAnimation: React.FC = () => {
-  const [animationData, setAnimationData] = useState<any>(null);
+  const [animationData, setAnimationData] = useState<Record<string, unknown> | null>(null);
 
   useEffect(() => {
     const loadAnimation = async () => {
       const res = await fetch("/animation/loading.json");
-      const data = await res.json();
+      const data: Record<string, unknown> = await res.json();
       setAnimationData(data);
     };
 
@@ -18,7 +18,7 @@ const LoadingAnimation: React.FC = () => {
 
   if (!animationData) return null;
 
-  const defaultOptions = {
+  const defaultOptions: Options = {
     loop: true,
     autoplay: true,
     animationData: animationData,
