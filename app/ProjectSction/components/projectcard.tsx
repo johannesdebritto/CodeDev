@@ -1,4 +1,6 @@
 // components/ProjectCard.tsx
+
+"use client"; // Penting untuk Client Component
 import React, { useState } from "react";
 
 interface ProjectCardProps {
