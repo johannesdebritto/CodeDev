@@ -19,7 +19,10 @@ export const metadata = {
   },
 };
 
-export default function Home() {
+export default async function Home() {
+  // Simulasi loading, bisa dihapus nanti
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+
   return (
     <main>
       <HeroSection />
