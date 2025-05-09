@@ -1,14 +1,16 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
-import "@/app/globals.css"; // Gunakan alias untuk impor global CSS
-import Navbar from "@/app/Components/Navbar"; // Gunakan alias untuk impor Navbar
-import Footer from "@/app/Components/Footer"; // Gunakan alias untuk impor Footer
-import FloatingButtons from "@/app/Components/FloatingButtons"; // Gunakan alias untuk FloatingButtons
+import "@/app/globals.css";
+import Navbar from "@/app/Components/Navbar";
+import Footer from "@/app/Components/Footer";
+import FloatingButtons from "@/app/Components/FloatingButtons";
+import Loading from "@/app/loading"; // Import loading component
 
 export const metadata: Metadata = {
   title: "CodeDev",
   description: "Freelance Website",
   icons: {
-    icon: "/images/logo/logo.ico", // Path ke favicon
+    icon: "/images/logo/logo.ico",
   },
 };
 
@@ -22,7 +24,6 @@ export default function RootLayout({
       <head>
         {/* Preload Images */}
         <link rel="preload" href="/images/logo/logo.svg" as="image" />
-
         <link rel="preload" href="/images/logo_wa.svg" as="image" />
       </head>
 
@@ -30,8 +31,11 @@ export default function RootLayout({
         {/* Navbar */}
         <Navbar />
 
-        {/* Konten Halaman */}
-        <main>{children}</main>
+        {/* Suspense untuk memuat loading sementara */}
+        <Suspense fallback={<Loading />}>
+          {/* Konten Halaman */}
+          <main>{children}</main>
+        </Suspense>
 
         {/* Footer */}
         <Footer />
