@@ -1,10 +1,9 @@
-import { Suspense } from "react";
+// app/layout.tsx
 import type { Metadata } from "next";
 import "@/app/globals.css";
 import Navbar from "@/app/Components/Navbar";
 import Footer from "@/app/Components/Footer";
 import FloatingButtons from "@/app/Components/FloatingButtons";
-import Loading from "@/app/loading"; // Import loading component
 
 export const metadata: Metadata = {
   title: "CodeDev",
@@ -21,26 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        {/* Preload Images */}
-        <link rel="preload" href="/images/logo/logo.svg" as="image" />
-        <link rel="preload" href="/images/logo_wa.svg" as="image" />
-      </head>
-
       <body className="antialiased">
-        {/* Navbar */}
         <Navbar />
-
-        {/* Suspense untuk memuat loading sementara */}
-        <Suspense fallback={<Loading />}>
-          {/* Konten Halaman */}
-          <main>{children}</main>
-        </Suspense>
-
-        {/* Footer */}
+        <main>{children}</main>
         <Footer />
-
-        {/* Floating Buttons */}
         <FloatingButtons />
       </body>
     </html>
