@@ -33,11 +33,14 @@ const ProjectPage: React.FC = () => {
 
         {formSubmitted && (
           <div className="flex justify-center mt-8">
-            <button onClick={() => handleCardSelect("web")} className="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-5 py-2 rounded-full mr-4">
-              Pilih Website
-            </button>
-            <button onClick={() => handleCardSelect("app")} className="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-5 py-2 rounded-full">
-              Pilih Aplikasi
+            <button
+              onClick={() => {
+                setFormSubmitted(false);
+                setSelectedType(null);
+              }}
+              className="bg-white text-purple-600 px-5 py-2 rounded-full hover:bg-purple-100 transition"
+            >
+              Kembali ke Formulir
             </button>
           </div>
         )}
