@@ -5,7 +5,9 @@
   --background: #ffffff;
   --foreground: #171717;
   --font-poppins: "Poppins", sans-serif;
+  /* Font untuk heading */
   --font-roboto: "Roboto", sans-serif;
+  /* Font untuk body */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -21,7 +23,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-inter);
-  /* Default font untuk body adalah Inter */
+  /* Default font untuk body adalah Roboto */
 }
 
 /* Menetapkan font pada elemen heading */
@@ -33,45 +35,26 @@ h4,
 h5,
 h6 {
   font-family: var(--font-inter);
-  /* Heading menggunakan Inter */
+  /* Heading menggunakan Poppins */
 }
 
 /* Menetapkan font pada elemen paragraf */
 
 p {
   font-family: var(--font-inter);
-  /* Paragraf menggunakan Inter */
+  /* Paragraf menggunakan Roboto */
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-/* Scroll offset untuk navbar */
+/* Tambahkan ini di styles/global.css */
 
 .scroll-offset {
   scroll-margin-top: 100px;
   /* Sesuaikan dengan tinggi navbar Anda */
 }
-
-/* Styling untuk animasi loading di tengah layar */
-
-.loading-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.8);
-  /* Transparan putih */
-  z-index: 9999;
-  /* Agar loading berada di atas konten */
-}
-
-/* Animasi fadeIn */
 
 @layer utilities {
   .animate-fadeIn {
