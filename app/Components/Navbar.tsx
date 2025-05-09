@@ -89,12 +89,8 @@ const Navbar: React.FC = () => {
           </Link>
         </div>
 
-        {/* Chatbot & Saran */}
-        <div className="hidden md:flex items-center space-x-4">
-          <Link href="#" className="flex items-center space-x-2 text-white bg-blue-600 px-4 py-2 rounded-lg hover:scale-105 transition-all">
-            <Image src="/images/icon/chatbot.svg" alt="Chatbot" width={24} height={24} priority />
-            <span>Chatbot</span>
-          </Link>
+        {/* Kotak Saran */}
+        <div className="hidden md:flex items-center">
           <Link href="/SaranSection" className="flex items-center space-x-2 text-white bg-blue-600 px-4 py-2 rounded-lg hover:scale-105 transition-all">
             <Image src="/images/icon/saran.svg" alt="Kotak Saran" width={24} height={24} priority />
             <span>Kotak Saran</span>
