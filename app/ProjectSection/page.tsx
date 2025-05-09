@@ -4,13 +4,11 @@ import ProjectCard from "./components/projectcard";
 
 const ProjectPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-xl shadow-xl text-center w-full max-w-3xl">
-        <h1 className="text-3xl font-bold text-gray-800 mb-6">Buat Proyek Anda di sini</h1>
-        <div className="flex justify-around">
-          {/* Card Web */}
+    <div className="min-h-screen bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center px-4">
+      <div className="p-8 text-center w-full max-w-4xl">
+        <h1 className="text-3xl font-bold text-white mb-8">Buat Proyek Anda di sini</h1>
+        <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
           <ProjectCard type="web" />
-          {/* Card Aplikasi */}
           <ProjectCard type="app" />
         </div>
       </div>
