@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const HeroSection = () => {
   return (
@@ -24,14 +25,16 @@ const HeroSection = () => {
             <span className="text-blue-800 font-semibold">Dev</span> untuk Bisnis yang Lebih Modern, Efisien, dan Berkembang.
           </p>
 
-          <a href="#layanan" className="relative inline-block text-lg group">
-            <span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-2xl group-hover:text-white">
-              <span className="absolute inset-0 w-full h-full px-5 py-3 rounded-2xl bg-gray-50"></span>
-              <span className="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 group-hover:-rotate-180 ease"></span>
-              <span className="relative">Buat Project</span>
-            </span>
-            <span className="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-2xl group-hover:mb-0 group-hover:mr-0" />
-          </a>
+          <Link href="/ProjectSection" passHref>
+            <a className="relative inline-block text-lg group">
+              <span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-2xl group-hover:text-white">
+                <span className="absolute inset-0 w-full h-full px-5 py-3 rounded-2xl bg-gray-50"></span>
+                <span className="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 group-hover:-rotate-180 ease"></span>
+                <span className="relative">Buat Project</span>
+              </span>
+              <span className="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-2xl group-hover:mb-0 group-hover:mr-0" />
+            </a>
+          </Link>
 
           {/* Ikon Sosial Media */}
           <div className="flex justify-center lg:justify-start items-center space-x-6 mt-4">
