@@ -1,4 +1,6 @@
 // app/ProjectSection/page.tsx
+"use client";
+
 import React, { useState } from "react";
 import ProjectCard from "./components/projectcard";
 import ProjectForm from "./components/formdata";
