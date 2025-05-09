@@ -6,8 +6,8 @@ const HeroSection = () => {
     <section id="home" className="bg-white pt-32 pb-16 min-h-screen flex items-center justify-center relative overflow-hidden">
       <div className="container mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center animate-fadeIn">
         {/* Kolom Gambar - Mobile muncul duluan */}
-        <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden order-1 md:order-2">
-          <Image src="/images/heros.svg" alt="Ilustrasi Maggot BSF Colomadu" fill className="object-contain object-center" priority />
+        <div className="w-full flex justify-center order-1 md:order-2">
+          <Image src="/images/heros.svg" alt="Ilustrasi Maggot BSF Colomadu" width={600} height={400} className="object-contain object-center" priority />
         </div>
 
         {/* Kolom Teks */}
