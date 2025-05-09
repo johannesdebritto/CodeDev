@@ -7,7 +7,7 @@ const HeroSection = () => {
       <div className="container mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center animate-fadeIn">
         {/* Kolom Gambar - Mobile muncul duluan */}
         <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden order-1 md:order-2">
-          <Image src="/images/icon/hero.svg" alt="Ilustrasi Maggot BSF Colomadu" fill className="object-contain object-center" priority />
+          <Image src="/images/heros.svg" alt="Ilustrasi Maggot BSF Colomadu" fill className="object-contain object-center" priority />
         </div>
 
         {/* Kolom Teks */}
