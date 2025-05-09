@@ -1,3 +1,5 @@
+"use client"; // Tambahkan ini di bagian atas
+
 import { useEffect, useState } from "react";
 import Lottie from "react-lottie";
 
@@ -14,7 +16,7 @@ const LoadingAnimation: React.FC = () => {
     loadAnimation();
   }, []);
 
-  if (!animationData) return null; // Jangan render Lottie kalau belum ada datanya
+  if (!animationData) return null;
 
   const defaultOptions = {
     loop: true,
