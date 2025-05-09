@@ -34,9 +34,6 @@ const Price = () => {
             <li>✅ Desain kustomisasi dasar</li>
           </ul>
           <p className="text-sm text-gray-500 mt-4 font-bold">Keterangan: *Fitur tambahan akan dikenakan biaya tambahan.</p>
-          <Link href="/FormPage">
-            <button className="mt-6 w-full bg-blue-500 text-white py-2 rounded-lg transform transition-transform hover:scale-105">Choose</button>
-          </Link>
         </article>
 
         {/* Backend Pack */}
@@ -55,9 +52,6 @@ const Price = () => {
             <li>✅ Pengelolaan Media</li>
           </ul>
           <p className="text-sm text-gray-500 mt-4 font-bold">Keterangan: *Fitur tambahan akan dikenakan biaya tambahan.</p>
-          <Link href="/FormPage">
-            <button className="mt-6 w-full bg-blue-500 text-white py-2 rounded-lg transform transition-transform hover:scale-105">Choose</button>
-          </Link>
         </article>
 
         {/* Fullstack Pack */}
@@ -76,9 +70,6 @@ const Price = () => {
             <li>✅ Analitik Dasar</li>
           </ul>
           <p className="text-sm text-gray-500 mt-4 font-bold">Keterangan: *Fitur tambahan akan dikenakan biaya tambahan.</p>
-          <Link href="/FormPage">
-            <button className="mt-6 w-full bg-blue-500 text-white py-2 rounded-lg transform transition-transform hover:scale-105">Choose</button>
-          </Link>
         </article>
       </div>
     </section>
