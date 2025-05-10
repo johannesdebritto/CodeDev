@@ -48,7 +48,7 @@ const HeroSection = () => {
               },
               {
                 label: "Threads",
-                url: "https://www.threads.net/@codedev_id?hl=id",
+                url: "https://www.threads.com/@codedev_id",
                 icon: "logo_threats.svg",
               },
             ].map((item) => (
