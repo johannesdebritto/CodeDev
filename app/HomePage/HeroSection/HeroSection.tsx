@@ -20,21 +20,23 @@ const HeroSection = () => {
             Desain UX/UI
           </h1>
           <hr className="my-4 border-t-4 border-black" />
-          <p className="text-gray-700 text-xl lg:text-2xl mb-5 font-medium italic">
+          <p className="text-gray-700 text-xl lg:text-2xl font-medium italic">
             Wujudkan Solusi Digital Terbaik Bersama Code
             <span className="text-blue-800 font-semibold">Dev</span> untuk Bisnis yang Lebih Modern, Efisien, dan Berkembang.
           </p>
 
-          <Link href="/ProjectSection" passHref>
-            <a className="relative inline-block text-lg group">
-              <span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-2xl group-hover:text-white">
-                <span className="absolute inset-0 w-full h-full px-5 py-3 rounded-2xl bg-gray-50"></span>
-                <span className="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 group-hover:-rotate-180 ease"></span>
-                <span className="relative">Buat Project</span>
-              </span>
-              <span className="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-2xl group-hover:mb-0 group-hover:mr-0" />
-            </a>
-          </Link>
+          <div className="mt-6">
+            <Link href="/ProjectSection" passHref>
+              <a className="relative inline-block text-lg group">
+                <span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-2xl group-hover:text-white">
+                  <span className="absolute inset-0 w-full h-full px-5 py-3 rounded-2xl bg-gray-50"></span>
+                  <span className="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 group-hover:-rotate-180 ease"></span>
+                  <span className="relative">Buat Project</span>
+                </span>
+                <span className="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-2xl group-hover:mb-0 group-hover:mr-0" />
+              </a>
+            </Link>
+          </div>
 
           {/* Ikon Sosial Media */}
           <div className="flex justify-center lg:justify-start items-center space-x-6 mt-4">
@@ -45,19 +47,9 @@ const HeroSection = () => {
                 icon: "logo_ig.svg",
               },
               {
-                label: "TikTok",
-                url: "https://www.tiktok.com",
-                icon: "logo_tiktok.svg",
-              },
-              {
                 label: "Threads",
                 url: "https://www.threads.net",
                 icon: "logo_threats.svg",
-              },
-              {
-                label: "X",
-                url: "https://www.twitter.com",
-                icon: "logo_x.svg",
               },
             ].map((item) => (
               <a key={item.label} href={item.url} target="_blank" rel="noopener noreferrer" aria-label={item.label} className="relative focus:outline-none transition-transform duration-300 hover:scale-125 group">
