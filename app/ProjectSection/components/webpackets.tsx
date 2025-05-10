@@ -2,9 +2,37 @@
 import React from "react";
 import Image from "next/image";
 
-const WebPackages = () => {
+interface FormData {
+  nama: string;
+  email: string;
+  noHp: string;
+  judul: string;
+  deskripsi: string;
+  deadline: string;
+}
+
+interface WebPackagesProps {
+  formData: FormData | null;
+}
+
+const WebPackages: React.FC<WebPackagesProps> = ({ formData }) => {
   const handleSelect = (title: string) => {
-    alert(`Kamu memilih: ${title}`);
+    const message = `
+Halo, saya tertarik dengan paket: ${title}
+
+Berikut detail proyek saya:
+- Nama: ${formData?.nama ?? "-"}
+- Email: ${formData?.email ?? "-"}
+- No HP: ${formData?.noHp ?? "-"}
+- Judul Proyek: ${formData?.judul ?? "-"}
+- Deskripsi: ${formData?.deskripsi ?? "-"}
+- Deadline: ${formData?.deadline ?? "-"}
+
+Silakan hubungi saya untuk informasi lebih lanjut.
+    `;
+    const encodedMessage = encodeURIComponent(message.trim());
+    const whatsappLink = `https://wa.me/6285642667034?text=${encodedMessage}`;
+    window.open(whatsappLink, "_blank");
   };
 
   const packages = [
