@@ -28,7 +28,7 @@ const FloatingButtons: React.FC = () => {
       {/* Tombol WhatsApp */}
       {isOpen && (
         <button
-          onClick={() => handleNavigate("/whatsapp")}
+          onClick={() => window.open("https://wa.me/6285642667034", "_blank")}
           className="flex items-center space-x-3 px-4 py-3 w-48 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 shadow-lg text-white"
         >
           <Image src="/images/icon/logo_wawhite.svg" alt="WhatsApp Icon" width={24} height={24} className="w-6 h-6" />
