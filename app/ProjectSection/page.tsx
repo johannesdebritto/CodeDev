@@ -8,7 +8,6 @@ import AplikasiPackages from "./components/apliaksipackage";
 
 const ProjectPage: React.FC = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
-  const [selectedType, setSelectedType] = useState<"web" | "app" | null>(null);
 
   const handleFormSubmit = (event: React.FormEvent) => {
     event.preventDefault();
@@ -17,7 +16,6 @@ const ProjectPage: React.FC = () => {
 
   const handleBack = () => {
     setFormSubmitted(false);
-    setSelectedType(null);
   };
 
   return (
