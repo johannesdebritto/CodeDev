@@ -8,7 +8,7 @@ const HeroSection = () => {
       <div className="container mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center animate-fadeIn">
         {/* Kolom Gambar - Mobile muncul duluan */}
         <div className="w-full flex justify-center order-1 md:order-2">
-          <Image src="/images/heros.svg" alt="Ilustrasi Maggot BSF Colomadu" width={600} height={400} className="object-contain object-center" priority />
+          <Image src="/images/heros.svg" alt="Hero Image" width={600} height={400} className="object-contain object-center" priority />
         </div>
 
         {/* Kolom Teks */}
@@ -43,12 +43,12 @@ const HeroSection = () => {
             {[
               {
                 label: "Instagram",
-                url: "https://www.instagram.com",
+                url: "https://www.instagram.com/codedev_id/",
                 icon: "logo_ig.svg",
               },
               {
                 label: "Threads",
-                url: "https://www.threads.net",
+                url: "https://www.threads.net/@codedev_id?hl=id",
                 icon: "logo_threats.svg",
               },
             ].map((item) => (
