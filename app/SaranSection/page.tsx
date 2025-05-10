@@ -21,7 +21,6 @@ const Saran = () => {
 
   const handleNext = () => {
     if (currentStep === 2) {
-      // Submit ke WhatsApp
       const message = `Halo! Saya ingin memberikan saran:\n\nNama: ${name}\nEmail: ${email}\nNo HP: ${phone}\nPerusahaan: ${company}\n\nSaran: ${feedback}`;
       const waUrl = `https://wa.me/6285642667034?text=${encodeURIComponent(message)}`;
       window.open(waUrl, "_blank");
@@ -48,8 +47,8 @@ const Saran = () => {
         <header className="flex items-center justify-between mb-8">
           {steps.map((step, index) => (
             <div key={index} className="flex items-center">
-              <div className={`w-8 h-8 flex items-center justify-center rounded-full text-white font-bold ${currentStep === step ? "bg-blue-500" : currentStep > step ? "bg-blue-300" : "bg-gray-300"}`}>{step}</div>
-              {index < steps.length - 1 && <div className={`h-1 w-20 ${currentStep > step ? "bg-blue-300" : "bg-gray-300"}`}></div>}
+              <div className={`w-8 h-8 flex items-center justify-center rounded-full text-white font-bold ${currentStep === step ? "bg-blue-500" : currentStep > step ? "bg-blue-300" : "bg-blue-100"}`}>{step}</div>
+              {index < steps.length - 1 && <div className={`h-1 w-20 ${currentStep > step ? "bg-blue-300" : "bg-blue-100"}`}></div>}
             </div>
           ))}
         </header>
@@ -57,24 +56,54 @@ const Saran = () => {
         <section>
           {currentStep === 1 && (
             <div>
-              <h1 className="text-xl font-semibold mb-4">Contact Details</h1>
-              <p className="text-gray-500 mb-6">Silakan isi informasi kontak Anda di bawah ini.</p>
+              <h1 className="text-xl font-semibold text-blue-600 mb-4">Contact Details</h1>
+              <p className="text-blue-400 mb-6">Silakan isi informasi kontak Anda di bawah ini.</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
-                  <input type="text" placeholder="John Carter" value={name} onChange={(e) => setName(e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" required />
+                  <label className="block text-sm font-medium text-blue-600 mb-2">Name</label>
+                  <input
+                    type="text"
+                    placeholder="John Carter"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="w-full px-4 py-2 border border-blue-300 rounded-lg text-blue-500 placeholder-blue-300 focus:ring-blue-500 focus:border-blue-500"
+                    required
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                  <input type="email" placeholder="Email address" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" required />
+                  <label className="block text-sm font-medium text-blue-600 mb-2">Email</label>
+                  <input
+                    type="email"
+                    placeholder="Email address"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="w-full px-4 py-2 border border-blue-300 rounded-lg text-blue-500 placeholder-blue-300 focus:ring-blue-500 focus:border-blue-500"
+                    required
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-                  <input type="text" placeholder="(123) 456-7890" value={phone} onChange={(e) => setPhone(e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" required />
+                  <label className="block text-sm font-medium text-blue-600 mb-2">Phone Number</label>
+                  <input
+                    type="text"
+                    placeholder="08xxxxxxxxxx"
+                    value={phone}
+                    onChange={(e) => {
+                      const val = e.target.value;
+                      if (/^\d*$/.test(val)) setPhone(val); // hanya angka
+                    }}
+                    className="w-full px-4 py-2 border border-blue-300 rounded-lg text-blue-500 placeholder-blue-300 focus:ring-blue-500 focus:border-blue-500"
+                    required
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Company</label>
-                  <input type="text" placeholder="Company name" value={company} onChange={(e) => setCompany(e.target.value)} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" />
+                  <label className="block text-sm font-medium text-blue-600 mb-2">Company</label>
+                  <input
+                    type="text"
+                    placeholder="Company name"
+                    value={company}
+                    onChange={(e) => setCompany(e.target.value)}
+                    className="w-full px-4 py-2 border border-blue-300 rounded-lg text-blue-500 placeholder-blue-300 focus:ring-blue-500 focus:border-blue-500"
+                  />
                 </div>
               </div>
             </div>
@@ -82,14 +111,14 @@ const Saran = () => {
 
           {currentStep === 2 && (
             <div>
-              <h2 className="text-xl font-semibold mb-4">Your Feedback</h2>
-              <p className="text-gray-500 mb-6">Masukkan saran atau masukan Anda di sini.</p>
+              <h2 className="text-xl font-semibold text-blue-600 mb-4">Your Feedback</h2>
+              <p className="text-blue-400 mb-6">Masukkan saran atau masukan Anda di sini.</p>
               <textarea
                 rows={5}
                 placeholder="Masukkan saran Anda di sini..."
                 value={feedback}
                 onChange={(e) => setFeedback(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-4 py-2 border border-blue-300 rounded-lg text-blue-500 placeholder-blue-300 focus:ring-blue-500 focus:border-blue-500"
                 required
               />
             </div>
@@ -97,18 +126,18 @@ const Saran = () => {
 
           {currentStep === 3 && (
             <div className="text-center">
-              <h2 className="text-2xl font-semibold mb-4">Terima Kasih!</h2>
-              <p className="text-gray-500 mb-6">Terima kasih telah memberikan saran Anda. Ini sangat berarti bagi kami!</p>
+              <h2 className="text-2xl font-semibold text-blue-600 mb-4">Terima Kasih!</h2>
+              <p className="text-blue-400 mb-6">Terima kasih telah memberikan saran Anda. Ini sangat berarti bagi kami!</p>
               <Image src="/images/icondekstop/terimakasih.svg" alt="Ilustrasi ucapan terima kasih" width={150} height={150} priority className="mx-auto" />
             </div>
           )}
         </section>
 
         <footer className="mt-8 flex justify-center gap-4">
-          <button onClick={handlePrevious} disabled={currentStep === 1} className={`px-4 py-2 rounded-lg ${currentStep === 1 ? "bg-gray-300 text-gray-500 cursor-not-allowed" : "bg-blue-500 text-white hover:bg-blue-600"}`}>
+          <button onClick={handlePrevious} disabled={currentStep === 1} className={`px-4 py-2 rounded-lg ${currentStep === 1 ? "bg-blue-100 text-blue-300 cursor-not-allowed" : "bg-blue-500 text-white hover:bg-blue-600"}`}>
             Previous
           </button>
-          <button onClick={handleNext} disabled={currentStep === 3} className={`px-4 py-2 rounded-lg ${currentStep === 3 ? "bg-gray-300 text-gray-500 cursor-not-allowed" : "bg-blue-500 text-white hover:bg-blue-600"}`}>
+          <button onClick={handleNext} disabled={currentStep === 3} className={`px-4 py-2 rounded-lg ${currentStep === 3 ? "bg-blue-100 text-blue-300 cursor-not-allowed" : "bg-blue-500 text-white hover:bg-blue-600"}`}>
             {currentStep === 2 ? "Kirim" : "Next"}
           </button>
         </footer>
