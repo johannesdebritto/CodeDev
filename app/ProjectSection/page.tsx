@@ -28,16 +28,16 @@ const ProjectPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center px-4 py-12">
-      <div className="w-full max-w-5xl text-center">
+      <div className="w-full max-w-5xl text-center pt-16">
+        {" "}
+        {/* Tambah padding top di sini */}
         <h1 className="text-3xl font-bold text-white mb-8">Buat Proyek Anda di sini</h1>
-
         {/* Step 1: Form */}
         {step === "form" && (
           <div className="flex justify-center">
             <ProjectForm handleFormSubmit={handleFormSubmit} />
           </div>
         )}
-
         {/* Step 2: Pilih web / app */}
         {step === "choose" && (
           <div className="flex flex-col items-center">
@@ -50,7 +50,6 @@ const ProjectPage: React.FC = () => {
             </button>
           </div>
         )}
-
         {/* Step 3: Tampilkan layanan sesuai pilihan */}
         {step === "web" && (
           <div>
@@ -62,7 +61,6 @@ const ProjectPage: React.FC = () => {
             </div>
           </div>
         )}
-
         {step === "app" && (
           <div>
             <AplikasiPackages />
