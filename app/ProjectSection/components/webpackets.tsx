@@ -46,15 +46,15 @@ const WebPackages = () => {
         <p className="text-lg mt-4">Bangun website profesional dengan mudah dan cepat</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
         {packages.map((pack) => (
-          <div key={pack.title} className="bg-white text-gray-900 rounded-xl shadow p-6 flex flex-col justify-between hover:shadow-md transition">
+          <div key={pack.title} className="bg-white text-gray-900 rounded-2xl shadow-xl p-6 flex flex-col justify-between hover:shadow-2xl transition">
             <div>
               <h2 className={`text-lg font-bold text-white px-3 py-1 rounded-full inline-block ${pack.color}`}>{pack.title}</h2>
-              <p className="text-2xl font-bold mt-3">{pack.price}</p>
-              <ul className="mt-4 text-sm list-disc list-inside space-y-1">
+              <p className="text-2xl font-bold mt-4">{pack.price}</p>
+              <ul className="mt-4 text-sm list-disc pl-5 text-left space-y-2">
                 {pack.features.map((item, index) => (
-                  <li key={index}>✅ {item}</li>
+                  <li key={index}>{item}</li>
                 ))}
               </ul>
             </div>

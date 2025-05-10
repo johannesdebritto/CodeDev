@@ -34,19 +34,24 @@ const AplikasiPackages = () => {
   };
 
   return (
-    <section id="paket-aplikasi" className="py-12 px-4 md:px-16 lg:px-24 bg-white text-gray-800">
-      <div className="text-center mb-10">
-        <h2 className="text-3xl font-bold mb-2">Pilih Paket Aplikasi</h2>
-        <p className="text-gray-600">Bangun aplikasi impianmu sesuai kebutuhan</p>
+    <section id="paket-aplikasi" className="relative py-16 px-4 md:px-16 lg:px-24 text-gray-800">
+      {/* Background */}
+      <div className="absolute inset-0 -z-10">
+        <div className="bg-gradient-to-r from-purple-500 to-pink-500 h-full w-full"></div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl font-bold text-white mb-4">Pilih Paket Aplikasi</h2>
+        <p className="text-gray-300">Bangun aplikasi impianmu sesuai kebutuhan</p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
         {aplikasiPackages.map((pack) => (
-          <div key={pack.title} className="border rounded-xl p-6 shadow hover:shadow-md transition duration-300 flex flex-col justify-between">
+          <div key={pack.title} className="bg-white text-gray-900 rounded-2xl shadow-xl p-6 flex flex-col justify-between hover:shadow-2xl transition">
             <div>
-              <h3 className={`text-lg font-bold text-white inline-block px-3 py-1 rounded-full ${pack.color}`}>{pack.title}</h3>
-              <p className="text-2xl font-bold mt-3">{pack.price}</p>
-              <ul className="mt-4 text-sm space-y-1 list-disc list-inside">
+              <h3 className={`text-lg font-bold text-white px-3 py-1 rounded-full inline-block ${pack.color}`}>{pack.title}</h3>
+              <p className="text-2xl font-bold mt-4">{pack.price}</p>
+              <ul className="mt-4 text-sm list-disc pl-5 text-left space-y-2">
                 {pack.features.map((f, idx) => (
                   <li key={idx}>{f}</li>
                 ))}
