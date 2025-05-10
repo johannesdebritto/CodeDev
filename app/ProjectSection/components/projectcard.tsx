@@ -19,7 +19,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ type }) => {
       </div>
       <h3 className="text-xl font-bold text-gray-800 mb-2">{title}</h3>
       <p className="text-gray-600 mb-4 text-sm">{desc}</p>
-      <button className="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-5 py-2 rounded-full hover:scale-105 transition-transform duration-300 shadow-md">Pilih</button>
+      <button
+        onClick={() => {
+          const targetId = type === "app" ? "paket-aplikasi" : "paket-website";
+          document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" });
+        }}
+        className="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-5 py-2 rounded-full hover:scale-105 transition-transform duration-300 shadow-md"
+      >
+        Pilih
+      </button>
     </div>
   );
 };
