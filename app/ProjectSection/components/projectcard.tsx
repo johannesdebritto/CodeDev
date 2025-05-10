@@ -1,13 +1,13 @@
-// components/ProjectCard.tsx
 "use client";
 import React from "react";
 import { FaGlobe, FaMobileAlt } from "react-icons/fa";
 
 interface ProjectCardProps {
   type: "web" | "app";
+  onSelect: () => void; // Tambahkan handler
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ type }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ type, onSelect }) => {
   const title = type === "web" ? "Layanan Website" : "Layanan Aplikasi";
   const desc = type === "web" ? "Bangun website yang profesional & responsif." : "Ciptakan aplikasi mobile modern & cepat.";
   const Icon = type === "web" ? FaGlobe : FaMobileAlt;
@@ -20,10 +20,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ type }) => {
       <h3 className="text-xl font-bold text-gray-800 mb-2">{title}</h3>
       <p className="text-gray-600 mb-4 text-sm">{desc}</p>
       <button
-        onClick={() => {
-          const targetId = type === "app" ? "paket-aplikasi" : "paket-website";
-          document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" });
-        }}
+        onClick={onSelect} // Ganti scroll ke handler
         className="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-5 py-2 rounded-full hover:scale-105 transition-transform duration-300 shadow-md"
       >
         Pilih
