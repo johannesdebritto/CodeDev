@@ -27,44 +27,19 @@ const Testimoni = () => {
 
   const getPosition = (index: number) => {
     const distance = (index - activeIndex + images.length) % images.length;
-    const base = windowWidth <= 768 ? 100 : 160;
+    const spacing = windowWidth <= 768 ? 70 : 120; // lebih rapat dari sebelumnya
 
     switch (distance) {
       case 0:
-        return {
-          x: "0%",
-          scale: 1.1,
-          zIndex: 5,
-          opacity: 1,
-        };
+        return { x: "0%", scale: 1.1, zIndex: 5, opacity: 1 };
       case 1:
-        return {
-          x: `-${base}%`,
-          scale: 0.85,
-          zIndex: 3,
-          opacity: 0.6,
-        };
+        return { x: `-${spacing}%`, scale: 0.9, zIndex: 3, opacity: 0.7 };
       case 2:
-        return {
-          x: `-${base * 2}%`,
-          scale: 0.75,
-          zIndex: 2,
-          opacity: 0.4,
-        };
+        return { x: `-${spacing * 2}%`, scale: 0.75, zIndex: 2, opacity: 0.5 };
       case 3:
-        return {
-          x: `${base * 2}%`,
-          scale: 0.75,
-          zIndex: 2,
-          opacity: 0.4,
-        };
+        return { x: `${spacing * 2}%`, scale: 0.75, zIndex: 2, opacity: 0.5 };
       case 4:
-        return {
-          x: `${base}%`,
-          scale: 0.85,
-          zIndex: 3,
-          opacity: 0.6,
-        };
+        return { x: `${spacing}%`, scale: 0.9, zIndex: 3, opacity: 0.7 };
       default:
         return { opacity: 0 };
     }
@@ -86,7 +61,7 @@ const Testimoni = () => {
         </h2>
       </div>
 
-      <div className="relative flex items-center justify-center h-[300px] overflow-hidden">
+      <div className="relative flex items-center justify-center h-[280px] md:h-[320px] overflow-hidden">
         {images.map((image, index) => {
           const positionStyle = getPosition(index);
           return (
@@ -95,7 +70,7 @@ const Testimoni = () => {
               className="absolute transition-all duration-500"
               animate={positionStyle}
               style={{
-                width: windowWidth <= 768 ? "150px" : "200px",
+                width: windowWidth <= 768 ? "130px" : "180px",
               }}
             >
               <Image src={image.src} alt={image.alt} width={300} height={300} className="rounded-lg w-full h-auto" priority={index === activeIndex} />
@@ -104,12 +79,12 @@ const Testimoni = () => {
         })}
       </div>
 
-      <div className="flex justify-center mt-8 gap-4">
+      <div className="flex justify-center mt-10 gap-4">
         <button aria-label="Sebelumnya" className="transition-transform transform hover:scale-110" onClick={handlePrev}>
-          <Image src="/images/icondekstop/panah1.svg" alt="Tombol sebelumnya" width={45} height={45} />
+          <Image src="/images/icondekstop/panah1.svg" alt="Tombol sebelumnya" width={40} height={40} />
         </button>
         <button aria-label="Selanjutnya" className="transition-transform transform hover:scale-110" onClick={handleNext}>
-          <Image src="/images/icondekstop/panah2.svg" alt="Tombol selanjutnya" width={45} height={45} />
+          <Image src="/images/icondekstop/panah2.svg" alt="Tombol selanjutnya" width={40} height={40} />
         </button>
       </div>
     </section>
