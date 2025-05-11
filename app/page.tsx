@@ -5,13 +5,13 @@ import LayananSection from "./HomePage/LayananSection";
 import PortofolioSection from "./HomePage/PortofolioSection";
 
 export const metadata = {
-  title: "CodeDev Indonesia",
-  description: "Selamat datang di situs resmi Nama Bisnis Anda. Kami menawarkan layanan terbaik dalam bidang [layanan].",
-  keywords: "layanan, portofolio, bisnis, jasa, solusi",
-  authors: [{ name: "Nama Bisnis Anda" }],
+  title: "Codedev Indonesia | Jasa Pembuatan Website Murah Colomadu",
+  description: "Codedev Indonesia melayani jasa pembuatan website murah, cepat, dan terpercaya untuk bisnis di Colomadu dan sekitarnya.",
+  keywords: "jasa pembuatan website Colomadu, website murah Colomadu, jasa web Colomadu, buat website bisnis, jasa website terpercaya",
+  authors: [{ name: "Codedev Indonesia" }],
   openGraph: {
-    title: "CodeDev Indonesia",
-    description: "Lihat layanan dan portofolio kami yang profesional dan terpercaya.",
+    title: "Codedev Indonesia | Jasa Website Colomadu Terpercaya",
+    description: "Lihat layanan dan portofolio profesional kami dalam pembuatan website untuk bisnis di Colomadu.",
     type: "website",
   },
   icons: {
