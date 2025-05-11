@@ -19,10 +19,10 @@ const Testimoni = () => {
 
   const images = [
     { src: "/images/testimoni1.png", alt: "Testimoni pelanggan 1" },
-    { src: "/images/estimoni2.png", alt: "Testimoni pelanggan 2" },
-    { src: "/images/estimoni3.png", alt: "Testimoni pelanggan 3" },
-    { src: "/images/estimoni4.png", alt: "Testimoni pelanggan 4" },
-    { src: "/images/estimoni5.png", alt: "Testimoni pelanggan 5" },
+    { src: "/images/testimoni2.png", alt: "Testimoni pelanggan 2" },
+    { src: "/images/testimoni3.png", alt: "Testimoni pelanggan 3" },
+    { src: "/images/testimoni4.png", alt: "Testimoni pelanggan 4" },
+    { src: "/images/testimoni5.png", alt: "Testimoni pelanggan 5" },
   ];
 
   const getPosition = (index: number) => {
