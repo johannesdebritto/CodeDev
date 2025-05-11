@@ -26,20 +26,23 @@ const Testimoni = () => {
   ];
 
   const getPosition = (index: number) => {
-    const distance = (index - activeIndex + images.length) % images.length;
-    const spacing = windowWidth <= 768 ? 40 : 80; // jarak antar gambar didekatkan
+    const spacing = windowWidth <= 768 ? 40 : 80;
+    const offset = (index - activeIndex + images.length) % images.length;
 
-    switch (distance) {
+    // Buat offset antara -2 sampai 2
+    const normalizedOffset = offset > 2 ? offset - images.length : offset;
+
+    switch (normalizedOffset) {
       case 0:
         return { x: "0%", scale: 1.2, zIndex: 5, opacity: 1 };
-      case 1:
+      case -1:
         return { x: `-${spacing}%`, scale: 1, zIndex: 3, opacity: 0.8 };
-      case 2:
-        return { x: `-${spacing * 2}%`, scale: 0.85, zIndex: 2, opacity: 0.6 };
-      case 3:
-        return { x: `${spacing * 2}%`, scale: 0.85, zIndex: 2, opacity: 0.6 };
-      case 4:
+      case 1:
         return { x: `${spacing}%`, scale: 1, zIndex: 3, opacity: 0.8 };
+      case -2:
+        return { x: `-${spacing * 2}%`, scale: 0.85, zIndex: 2, opacity: 0.6 };
+      case 2:
+        return { x: `${spacing * 2}%`, scale: 0.85, zIndex: 2, opacity: 0.6 };
       default:
         return { opacity: 0 };
     }
