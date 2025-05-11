@@ -27,7 +27,7 @@ const Testimoni = () => {
 
   const getPosition = (index: number) => {
     const distance = (index - activeIndex + images.length) % images.length;
-    const spacing = windowWidth <= 768 ? 70 : 80; // diperpendek jaraknya
+    const spacing = windowWidth <= 768 ? 50 : 80; // diperpendek jaraknya
 
     switch (distance) {
       case 0:
