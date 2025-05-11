@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const Testimoni = () => {
   const [windowWidth, setWindowWidth] = useState(0);
-  const [positionIndexes, setPositionIndexes] = useState([0, 1, 2]);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -18,51 +18,90 @@ const Testimoni = () => {
   }, []);
 
   const images = [
-    { src: "/images/icondekstop/komen1.svg", alt: "Testimoni dari pelanggan 1" },
-    { src: "/images/icondekstop/komen2.svg", alt: "Testimoni dari pelanggan 2" },
-    { src: "/images/icondekstop/komen3.svg", alt: "Testimoni dari pelanggan 3" },
+    { src: "/images/icondekstop/komen1.svg", alt: "Testimoni pelanggan 1" },
+    { src: "/images/icondekstop/komen2.svg", alt: "Testimoni pelanggan 2" },
+    { src: "/images/icondekstop/komen3.svg", alt: "Testimoni pelanggan 3" },
+    { src: "/images/icondekstop/komen1.svg", alt: "Testimoni pelanggan 4" },
+    { src: "/images/icondekstop/komen2.svg", alt: "Testimoni pelanggan 5" },
   ];
 
-  const positionsDesktop = ["center", "left", "right"];
-  const positionsMobile = ["center", "hidden", "hidden"];
+  const getPosition = (index: number) => {
+    const distance = (index - activeIndex + images.length) % images.length;
+    const base = windowWidth <= 768 ? 100 : 160;
 
-  const imageVariants = {
-    center: { x: "0%", scale: 1.3, zIndex: 5, opacity: 1 },
-    left: { x: "-90%", scale: 1, zIndex: 3, opacity: 0.5 },
-    right: { x: "90%", scale: 1, zIndex: 3, opacity: 0.5 },
-    hidden: { opacity: 0, x: "0%", scale: 0 },
+    switch (distance) {
+      case 0:
+        return {
+          x: "0%",
+          scale: 1.1,
+          zIndex: 5,
+          opacity: 1,
+        };
+      case 1:
+        return {
+          x: `-${base}%`,
+          scale: 0.85,
+          zIndex: 3,
+          opacity: 0.6,
+        };
+      case 2:
+        return {
+          x: `-${base * 2}%`,
+          scale: 0.75,
+          zIndex: 2,
+          opacity: 0.4,
+        };
+      case 3:
+        return {
+          x: `${base * 2}%`,
+          scale: 0.75,
+          zIndex: 2,
+          opacity: 0.4,
+        };
+      case 4:
+        return {
+          x: `${base}%`,
+          scale: 0.85,
+          zIndex: 3,
+          opacity: 0.6,
+        };
+      default:
+        return { opacity: 0 };
+    }
   };
 
   const handlePrev = () => {
-    setPositionIndexes((prev) => prev.map((i) => (i + 2) % 3));
+    setActiveIndex((prev) => (prev - 1 + images.length) % images.length);
   };
 
   const handleNext = () => {
-    setPositionIndexes((prev) => prev.map((i) => (i + 1) % 3));
+    setActiveIndex((prev) => (prev + 1) % images.length);
   };
 
   return (
     <section className="relative bg-cover bg-center bg-no-repeat py-16" style={{ backgroundImage: "url('/images/icondekstop/bgkomen.svg')" }} aria-labelledby="testimonial-heading">
-      <div className="text-center text-white mb-8">
+      <div className="text-center text-white mb-12">
         <h2 id="testimonial-heading" className="text-4xl font-bold">
           Testimoni Kustomer Kami
         </h2>
       </div>
 
-      <div className="relative flex items-center justify-center h-[400px]">
-        {images.map((image, index) => (
-          <motion.figure
-            key={index}
-            className="absolute"
-            initial="center"
-            animate={windowWidth <= 768 ? positionsMobile[positionIndexes[index]] : positionsDesktop[positionIndexes[index]]}
-            variants={imageVariants}
-            transition={{ duration: 0.5 }}
-            style={{ width: windowWidth <= 768 ? "80%" : "30%" }}
-          >
-            <Image src={image.src} alt={image.alt} width={windowWidth <= 768 ? 500 : 350} height={windowWidth <= 768 ? 500 : 350} className="rounded-lg" priority={index === 0} />
-          </motion.figure>
-        ))}
+      <div className="relative flex items-center justify-center h-[300px] overflow-hidden">
+        {images.map((image, index) => {
+          const positionStyle = getPosition(index);
+          return (
+            <motion.figure
+              key={index}
+              className="absolute transition-all duration-500"
+              animate={positionStyle}
+              style={{
+                width: windowWidth <= 768 ? "150px" : "200px",
+              }}
+            >
+              <Image src={image.src} alt={image.alt} width={300} height={300} className="rounded-lg w-full h-auto" priority={index === activeIndex} />
+            </motion.figure>
+          );
+        })}
       </div>
 
       <div className="flex justify-center mt-8 gap-4">
