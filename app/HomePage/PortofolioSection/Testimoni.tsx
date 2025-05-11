@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 
 const Testimoni = () => {
   const [windowWidth, setWindowWidth] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -24,6 +25,34 @@ const Testimoni = () => {
     { src: "/images/icondekstop/komen2.svg", alt: "Testimoni pelanggan 5" },
   ];
 
+  const getPosition = (index: number) => {
+    const distance = (index - activeIndex + images.length) % images.length;
+    const spacing = windowWidth <= 768 ? 40 : 80; // jarak antar gambar didekatkan
+
+    switch (distance) {
+      case 0:
+        return { x: "0%", scale: 1.2, zIndex: 5, opacity: 1 };
+      case 1:
+        return { x: `-${spacing}%`, scale: 1, zIndex: 3, opacity: 0.8 };
+      case 2:
+        return { x: `-${spacing * 2}%`, scale: 0.85, zIndex: 2, opacity: 0.6 };
+      case 3:
+        return { x: `${spacing * 2}%`, scale: 0.85, zIndex: 2, opacity: 0.6 };
+      case 4:
+        return { x: `${spacing}%`, scale: 1, zIndex: 3, opacity: 0.8 };
+      default:
+        return { opacity: 0 };
+    }
+  };
+
+  const handlePrev = () => {
+    setActiveIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  const handleNext = () => {
+    setActiveIndex((prev) => (prev + 1) % images.length);
+  };
+
   return (
     <section className="relative bg-cover bg-center bg-no-repeat py-16" style={{ backgroundImage: "url('/images/icondekstop/bgkomen.svg')" }} aria-labelledby="testimonial-heading">
       <div className="text-center text-white mb-12">
@@ -32,20 +61,31 @@ const Testimoni = () => {
         </h2>
       </div>
 
-      <div className="flex justify-center items-center gap-6 flex-wrap">
-        {images.map((image, index) => (
-          <motion.figure
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
-            style={{
-              width: windowWidth <= 768 ? "140px" : "200px",
-            }}
-          >
-            <Image src={image.src} alt={image.alt} width={300} height={300} className="rounded-lg w-full h-auto" priority={index === 0} />
-          </motion.figure>
-        ))}
+      <div className="relative flex items-center justify-center h-[300px] md:h-[360px] overflow-hidden">
+        {images.map((image, index) => {
+          const positionStyle = getPosition(index);
+          return (
+            <motion.figure
+              key={index}
+              className="absolute transition-all duration-500"
+              animate={positionStyle}
+              style={{
+                width: windowWidth <= 768 ? "180px" : "240px", // diperbesar
+              }}
+            >
+              <Image src={image.src} alt={image.alt} width={300} height={300} className="rounded-lg w-full h-auto" priority={index === activeIndex} />
+            </motion.figure>
+          );
+        })}
+      </div>
+
+      <div className="flex justify-center mt-10 gap-4">
+        <button aria-label="Sebelumnya" className="transition-transform transform hover:scale-110" onClick={handlePrev}>
+          <Image src="/images/icondekstop/panah1.svg" alt="Tombol sebelumnya" width={40} height={40} />
+        </button>
+        <button aria-label="Selanjutnya" className="transition-transform transform hover:scale-110" onClick={handleNext}>
+          <Image src="/images/icondekstop/panah2.svg" alt="Tombol selanjutnya" width={40} height={40} />
+        </button>
       </div>
     </section>
   );
