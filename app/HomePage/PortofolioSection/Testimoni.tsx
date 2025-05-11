@@ -27,12 +27,17 @@ const Testimoni = () => {
 
   const getPosition = (index: number) => {
     const spacing = windowWidth <= 768 ? 40 : 80;
-    const offset = (index - activeIndex + images.length) % images.length;
+    const total = images.length;
+    let offset = index - activeIndex;
 
-    // Buat offset antara -2 sampai 2
-    const normalizedOffset = offset > 2 ? offset - images.length : offset;
+    // Biar bisa muter rotasi ke kiri-kanan secara visual
+    if (offset < -Math.floor(total / 2)) {
+      offset += total;
+    } else if (offset > Math.floor(total / 2)) {
+      offset -= total;
+    }
 
-    switch (normalizedOffset) {
+    switch (offset) {
       case 0:
         return { x: "0%", scale: 1.2, zIndex: 5, opacity: 1 };
       case -1:
@@ -44,7 +49,7 @@ const Testimoni = () => {
       case 2:
         return { x: `${spacing * 2}%`, scale: 0.85, zIndex: 2, opacity: 0.6 };
       default:
-        return { opacity: 0 };
+        return { opacity: 0, scale: 0.5, zIndex: 0 }; // di luar 5 card, disembunyikan
     }
   };
 
