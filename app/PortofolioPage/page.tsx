@@ -4,23 +4,30 @@ import Image from "next/image";
 const projects = [
   {
     id: 1,
-    title: "Porto1",
+    title: "Maggot BSF Colomadu",
     category: "Website",
-    description: "Website porto1 yang menampilkan desain responsif dan modern.",
+    description: "Sistem informasi berbasis web untuk pengelolaan peternakan maggot di Colomadu.",
     image: "/images/icondekstop/bgungu.png",
   },
   {
     id: 2,
-    title: "Porto2",
-    category: "Website",
-    description: "Website porto2 untuk profil perusahaan sederhana.",
+    title: "Scan Arang EENT",
+    category: "Aplikasi",
+    description: "Aplikasi mobile untuk pemindaian dan manajemen produksi arang menggunakan teknologi EENT.",
     image: "/images/icondekstop/bgungu.png",
   },
   {
     id: 3,
-    title: "Porto3",
-    category: "Website",
-    description: "Website porto3 untuk sistem informasi bisnis.",
+    title: "Azzimuth Tracker",
+    category: "Aplikasi",
+    description: "Aplikasi pelacak azimut untuk keperluan astronomi dan navigasi berbasis sensor perangkat.",
+    image: "/images/icondekstop/bgungu.png",
+  },
+  {
+    id: 4,
+    title: "Dompetku",
+    category: "Aplikasi",
+    description: "Dompet digital dengan fitur pencatatan keuangan pribadi dan pengingat transaksi.",
     image: "/images/icondekstop/bgungu.png",
   },
 ];
@@ -33,8 +40,8 @@ const ProjectWeb = () => {
       </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {projects.map((project) => (
-          <article key={project.id} className="border rounded-lg shadow-md flex flex-col items-start w-full max-w-xs mx-auto" aria-label={`Project ${project.title}`}>
+        {projects.map((project, index) => (
+          <article key={project.id} className={`border rounded-lg shadow-md flex flex-col items-start w-full max-w-xs mx-auto ${index === 3 ? "md:col-start-1" : ""}`} aria-label={`Project ${project.title}`}>
             <figure className="w-full">
               <Image src={project.image} alt={`Tampilan ${project.title}`} width={500} height={300} className="w-full h-32 object-cover rounded-t-lg" priority />
             </figure>
