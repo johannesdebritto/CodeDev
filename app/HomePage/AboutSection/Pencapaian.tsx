@@ -7,18 +7,30 @@ const AnimatedCounter = ({ to, isPercent = false }: { to: number; isPercent?: bo
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    let start = 0;
-    const duration = 1000; // total duration in ms
-    const increment = Math.ceil(to / (duration / 30)); // update every ~30ms
+    let current = 0;
+    let interval: NodeJS.Timeout;
 
-    const interval = setInterval(() => {
-      start += increment;
-      if (start >= to) {
-        start = to;
-        clearInterval(interval);
-      }
-      setCount(start);
-    }, 30);
+    if (to <= 10) {
+      // Untuk angka kecil
+      interval = setInterval(() => {
+        current += 1;
+        setCount(current);
+        if (current >= to) {
+          clearInterval(interval);
+        }
+      }, 300); // tiap 300ms naik 1
+    } else {
+      // Untuk angka besar
+      const increment = Math.ceil(to / 50); // misal 100 / 50 = +2 tiap interval
+      interval = setInterval(() => {
+        current += increment;
+        if (current >= to) {
+          current = to;
+          clearInterval(interval);
+        }
+        setCount(current);
+      }, 30); // tiap 30ms naik
+    }
 
     return () => clearInterval(interval);
   }, [to]);
