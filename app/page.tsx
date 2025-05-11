@@ -5,12 +5,12 @@ import LayananSection from "./HomePage/LayananSection";
 import PortofolioSection from "./HomePage/PortofolioSection";
 
 export const metadata = {
-  title: "Beranda | Nama Bisnis Anda",
+  title: "CodeDev Indonesia",
   description: "Selamat datang di situs resmi Nama Bisnis Anda. Kami menawarkan layanan terbaik dalam bidang [layanan].",
   keywords: "layanan, portofolio, bisnis, jasa, solusi",
   authors: [{ name: "Nama Bisnis Anda" }],
   openGraph: {
-    title: "Beranda | Nama Bisnis Anda",
+    title: "CodeDev Indonesia",
     description: "Lihat layanan dan portofolio kami yang profesional dan terpercaya.",
     type: "website",
   },
