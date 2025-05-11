@@ -12,17 +12,17 @@ const projects = [
   },
   {
     id: 2,
-    title: "Scan Arang EENT",
+    title: "Scan EVENT BARANG",
     category: "Aplikasi",
-    description: "Aplikasi mobile untuk pemindaian dan manajemen produksi arang menggunakan teknologi EENT.",
-    image: "/images/andro1.png",
+    description: "Aplikasi mobile untuk pemindaian dan manajemen barang kelaur masuk untuk event yang sedang berlangsung.",
+    image: "/images/andro2.png",
   },
   {
     id: 3,
     title: "Azzimuth Tracker",
     category: "Aplikasi",
-    description: "Aplikasi pelacak azimut untuk keperluan astronomi dan navigasi berbasis sensor perangkat.",
-    image: "/images/andro2.png",
+    description: "Aplikasi pelacak azimut untuk keperluan navigasi saat berjalan.",
+    image: "/images/andro1.png",
   },
 ];
 
