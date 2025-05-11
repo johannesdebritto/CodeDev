@@ -73,15 +73,23 @@ const Testimoni = () => {
         {images.map((image, index) => {
           const positionStyle = getPosition(index);
           return (
+            // Ubah bagian ini di dalam return:
             <motion.figure
               key={index}
               className="absolute transition-all duration-500"
               animate={positionStyle}
               style={{
-                width: windowWidth <= 768 ? "180px" : "240px", // diperbesar
+                width: windowWidth <= 768 ? "220px" : "280px", // Diperbesar dari 180px dan 240px
               }}
             >
-              <Image src={image.src} alt={image.alt} width={300} height={300} className="rounded-lg w-full h-auto" priority={index === activeIndex} />
+              <Image
+                src={image.src}
+                alt={image.alt}
+                width={360} // Diperbesar dari 300
+                height={360} // Diperbesar dari 300
+                className="rounded-lg w-full h-auto"
+                priority={index === activeIndex}
+              />
             </motion.figure>
           );
         })}
