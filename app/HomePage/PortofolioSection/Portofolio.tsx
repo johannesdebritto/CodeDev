@@ -42,7 +42,7 @@ const Portofolio = () => {
             <Image src={project.image} alt={`Tampilan ${project.title}`} width={400} height={200} className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" priority={index === 0} />
 
             {/* Overlay Info: muncul dari bawah saat hover */}
-            <div className="absolute bottom-0 left-0 w-full h-1/2 bg-black/40 backdrop-blur-sm text-white px-4 py-3 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
+            <div className="absolute bottom-0 left-0 w-full h-3/4 bg-black/50 backdrop-blur-md text-white px-4 py-5 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
               <h3 className="text-lg font-semibold">{project.title}</h3>
               <span className="inline-block bg-blue-500 text-white text-xs px-2 py-1 rounded-full mt-1">{project.category}</span>
               <p className="text-sm mt-2">{project.description}</p>
