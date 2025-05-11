@@ -8,21 +8,21 @@ const projects = [
     title: "Maggot BSF Colomadu",
     category: "Website",
     description: "Sistem informasi berbasis web untuk pengelolaan peternakan maggot di Colomadu.",
-    image: "/images/icondekstop/bgungu.png",
+    image: "/images/web.png",
   },
   {
     id: 2,
     title: "Scan Arang EENT",
     category: "Aplikasi",
     description: "Aplikasi mobile untuk pemindaian dan manajemen produksi arang menggunakan teknologi EENT.",
-    image: "/images/icondekstop/bgbiru.png",
+    image: "/images/andro1.png",
   },
   {
     id: 3,
     title: "Azzimuth Tracker",
     category: "Aplikasi",
     description: "Aplikasi pelacak azimut untuk keperluan astronomi dan navigasi berbasis sensor perangkat.",
-    image: "/images/icondekstop/bgpink.png",
+    image: "/images/andro2.png",
   },
 ];
 
@@ -41,7 +41,7 @@ const Portofolio = () => {
             {/* Full Gambar */}
             <Image src={project.image} alt={`Tampilan ${project.title}`} width={400} height={200} className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" priority={index === 0} />
 
-            {/* Overlay Info: muncul dari bawah saat hover */}
+            {/* Overlay Info */}
             <div className="absolute bottom-0 left-0 w-full h-3/4 bg-black/50 backdrop-blur-md text-white px-4 py-5 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
               <h3 className="text-lg font-semibold">{project.title}</h3>
               <span className="inline-block bg-blue-500 text-white text-xs px-2 py-1 rounded-full mt-1">{project.category}</span>
