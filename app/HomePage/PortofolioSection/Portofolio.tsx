@@ -1,94 +1,68 @@
-"use client";
-
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import Link from "next/link";
 
-const Testimoni = () => {
-  const [windowWidth, setWindowWidth] = useState(0);
-  const [activeIndex, setActiveIndex] = useState(0);
+const projects = [
+  {
+    id: 1,
+    title: "Maggot BSF Colomadu",
+    category: "Website",
+    description: "Sistem informasi berbasis web untuk pengelolaan peternakan maggot di Colomadu.",
+    image: "/images/icondekstop/bgungu.png",
+  },
+  {
+    id: 2,
+    title: "Scan Arang EENT",
+    category: "Aplikasi",
+    description: "Aplikasi mobile untuk pemindaian dan manajemen produksi arang menggunakan teknologi EENT.",
+    image: "/images/icondekstop/bgbiru.png",
+  },
+  {
+    id: 3,
+    title: "Azzimuth Tracker",
+    category: "Aplikasi",
+    description: "Aplikasi pelacak azimut untuk keperluan astronomi dan navigasi berbasis sensor perangkat.",
+    image: "/images/icondekstop/bgpink.png",
+  },
+];
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setWindowWidth(window.innerWidth);
-      const handleResize = () => setWindowWidth(window.innerWidth);
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }
-  }, []);
-
-  const images = [
-    { src: "/images/icondekstop/komen1.svg", alt: "Testimoni pelanggan 1" },
-    { src: "/images/icondekstop/komen2.svg", alt: "Testimoni pelanggan 2" },
-    { src: "/images/icondekstop/komen3.svg", alt: "Testimoni pelanggan 3" },
-    { src: "/images/icondekstop/komen1.svg", alt: "Testimoni pelanggan 4" },
-    { src: "/images/icondekstop/komen2.svg", alt: "Testimoni pelanggan 5" },
-  ];
-
-  const getPosition = (index: number) => {
-    const distance = (index - activeIndex + images.length) % images.length;
-    const spacing = windowWidth <= 768 ? 80 : 100; // Jarak antar testimoni agak lebih besar
-
-    switch (distance) {
-      case 0:
-        return { x: "0%", scale: 1.2, zIndex: 5, opacity: 1 };
-      case 1:
-        return { x: `-${spacing}%`, scale: 1, zIndex: 3, opacity: 0.9 };
-      case 2:
-        return { x: `-${spacing * 2}%`, scale: 0.95, zIndex: 2, opacity: 0.75 };
-      case 3:
-        return { x: `${spacing * 2}%`, scale: 0.95, zIndex: 2, opacity: 0.75 };
-      case 4:
-        return { x: `${spacing}%`, scale: 1, zIndex: 3, opacity: 0.9 };
-      default:
-        return { opacity: 0 };
-    }
-  };
-
-  const handlePrev = () => {
-    setActiveIndex((prev) => (prev - 1 + images.length) % images.length);
-  };
-
-  const handleNext = () => {
-    setActiveIndex((prev) => (prev + 1) % images.length);
-  };
-
+const Portofolio = () => {
   return (
-    <section className="relative bg-cover bg-center bg-no-repeat py-16" style={{ backgroundImage: "url('/images/icondekstop/bgkomen.svg')" }} aria-labelledby="testimonial-heading">
-      <div className="text-center text-white mb-12">
-        <h2 id="testimonial-heading" className="text-4xl font-bold">
-          Testimoni Kustomer Kami
-        </h2>
+    <section id="portfolio" className="scroll-offset bg-white max-w-7xl mx-auto px-4 py-20" aria-labelledby="portfolio-heading">
+      {/* Judul */}
+      <h2 id="portfolio-heading" className="text-center text-2xl font-bold text-gray-800 mb-8">
+        PROYEK YANG CODE<span className="text-blue-600">DEV</span> PERNAH KERJAKAN
+      </h2>
+
+      {/* Grid Project */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {projects.map((project, index) => (
+          <article key={project.id} className="relative group w-full max-w-xs mx-auto overflow-hidden rounded-lg shadow-md">
+            {/* Full Gambar */}
+            <Image src={project.image} alt={`Tampilan ${project.title}`} width={400} height={200} className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" priority={index === 0} />
+
+            {/* Overlay Info: muncul dari bawah saat hover */}
+            <div className="absolute bottom-0 left-0 w-full h-3/4 bg-black/50 backdrop-blur-md text-white px-4 py-5 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
+              <h3 className="text-lg font-semibold">{project.title}</h3>
+              <span className="inline-block bg-blue-500 text-white text-xs px-2 py-1 rounded-full mt-1">{project.category}</span>
+              <p className="text-sm mt-2">{project.description}</p>
+            </div>
+          </article>
+        ))}
       </div>
 
-      <div className="relative flex items-center justify-center h-[320px] md:h-[400px] overflow-hidden">
-        {images.map((image, index) => {
-          const positionStyle = getPosition(index);
-          return (
-            <motion.figure
-              key={index}
-              className="absolute transition-all duration-500"
-              animate={positionStyle}
-              style={{
-                width: windowWidth <= 768 ? "180px" : "220px", // Ukuran gambar lebih besar dan seragam
-              }}
-            >
-              <Image src={image.src} alt={image.alt} width={250} height={250} className="rounded-xl w-full h-auto shadow-lg" priority={index === activeIndex} />
-            </motion.figure>
-          );
-        })}
-      </div>
-
-      <div className="flex justify-center mt-10 gap-4">
-        <button aria-label="Sebelumnya" className="transition-transform transform hover:scale-110" onClick={handlePrev}>
-          <Image src="/images/icondekstop/panah1.svg" alt="Tombol sebelumnya" width={40} height={40} />
-        </button>
-        <button aria-label="Selanjutnya" className="transition-transform transform hover:scale-110" onClick={handleNext}>
-          <Image src="/images/icondekstop/panah2.svg" alt="Tombol selanjutnya" width={40} height={40} />
-        </button>
+      {/* Tombol Lihat Project Lainnya */}
+      <div className="mt-8 text-center">
+        <Link
+          href="/PortofolioPage"
+          className="relative px-5 py-3 overflow-hidden group text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl rounded-full focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 transition-transform transform hover:scale-105 ease-out duration-300 inline-block"
+        >
+          <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+          <span className="relative">Lihat Project Lainnya</span>
+        </Link>
       </div>
     </section>
   );
 };
 
-export default Testimoni;
+export default Portofolio;
