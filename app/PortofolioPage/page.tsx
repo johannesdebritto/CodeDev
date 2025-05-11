@@ -34,7 +34,7 @@ const projects = [
 
 const ProjectWeb = () => {
   return (
-    <section id="portfolio" className="scroll-offset bg-white max-w-7xl mx-auto px-4 py-12">
+    <section id="portfolio" className="scroll-offset bg-white max-w-7xl mx-auto px-4 py-12 pt-32 md:pt-40">
       <h2 className="text-center text-2xl font-bold text-gray-800 mb-8">
         PROYEK YANG CODE<span className="text-blue-600">DEV</span> PERNAH KERJAKAN
       </h2>
@@ -43,7 +43,7 @@ const ProjectWeb = () => {
         {projects.map((project, index) => (
           <article key={project.id} className={`border rounded-lg shadow-md flex flex-col items-start w-full max-w-xs mx-auto ${index === 3 ? "md:col-start-1" : ""}`} aria-label={`Project ${project.title}`}>
             <figure className="w-full">
-              <Image src={project.image} alt={`Tampilan ${project.title}`} width={500} height={300} className="w-full h-32 object-cover rounded-t-lg" priority />
+              <Image src={project.image} alt={`Tampilan ${project.title}`} width={500} height={300} className="w-full h-32 object-cover rounded-t-lg" priority={index === 0} />
             </figure>
 
             <div className="px-4 py-6">
