@@ -39,7 +39,7 @@ const Portofolio = () => {
         {projects.map((project, index) => (
           <article key={project.id} className="relative group w-full max-w-xs mx-auto overflow-hidden rounded-lg shadow-md">
             {/* Full Gambar */}
-            <Image src={project.image} alt={`Tampilan ${project.title}`} width={400} height={200} className="w-full h-64 object-contain transition-transform duration-300 group-hover:scale-105" priority={index === 0} />
+            <Image src={project.image} alt={`Tampilan ${project.title}`} width={400} height={200} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" priority={index === 0} />
 
             {/* Overlay Info */}
             <div className="absolute bottom-0 left-0 w-full h-3/4 bg-black/50 backdrop-blur-md text-white px-4 py-5 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
