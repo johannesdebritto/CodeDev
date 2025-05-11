@@ -29,7 +29,7 @@ const projects = [
     title: "Dompetku",
     category: "Aplikasi",
     description: "Dompet digital dengan fitur pencatatan keuangan pribadi dan pengingat transaksi.",
-    image: "/images/icondekstop/bgungu.png",
+    image: "/images/andro3.png", // Gambar baru untuk card keempat
   },
 ];
 
