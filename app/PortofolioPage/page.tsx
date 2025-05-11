@@ -1,3 +1,4 @@
+// components/ProjectWeb.tsx
 import React from "react";
 import Image from "next/image";
 
@@ -34,7 +35,7 @@ const projects = [
 
 const ProjectWeb = () => {
   return (
-    <section id="portfolio" className="scroll-offset bg-white max-w-7xl mx-auto px-4 py-12 pt-32 md:pt-40">
+    <section id="portfolio" className="scroll-offset bg-white max-w-7xl mx-auto px-4 py-12 pt-24 md:pt-32">
       <h2 className="text-center text-2xl font-bold text-gray-800 mb-8">
         PROYEK YANG CODE<span className="text-blue-600">DEV</span> PERNAH KERJAKAN
       </h2>
@@ -61,16 +62,6 @@ const ProjectWeb = () => {
             </div>
           </article>
         ))}
-      </div>
-
-      <div className="mt-8 text-center">
-        <a
-          href="#_"
-          className="relative px-5 py-3 overflow-hidden group text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl rounded-full focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 transition-transform transform hover:scale-105 ease-out duration-300 inline-block"
-        >
-          <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
-          <span className="relative">Lihat Project Lainnya</span>
-        </a>
       </div>
     </section>
   );
