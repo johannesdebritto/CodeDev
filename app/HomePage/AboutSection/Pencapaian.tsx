@@ -1,7 +1,35 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
+
+const AnimatedCounter = ({ to, isPercent = false }: { to: number; isPercent?: boolean }) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let start = 0;
+    const duration = 1000; // total duration in ms
+    const increment = Math.ceil(to / (duration / 30)); // update every ~30ms
+
+    const interval = setInterval(() => {
+      start += increment;
+      if (start >= to) {
+        start = to;
+        clearInterval(interval);
+      }
+      setCount(start);
+    }, 30);
+
+    return () => clearInterval(interval);
+  }, [to]);
+
+  return (
+    <span>
+      {count}
+      {isPercent ? "%" : ""}
+    </span>
+  );
+};
 
 const Pencapaian = () => {
   return (
@@ -28,7 +56,9 @@ const Pencapaian = () => {
           >
             <Image src="/images/icon/iconorang.svg" alt="Klien Loyal" width={48} height={48} priority className="absolute top-4 left-4" />
             <h3 className="text-4xl font-bold text-white absolute top-4 left-28">Client</h3>
-            <p className="text-white font-medium mt-12 text-4xl">0</p>
+            <p className="text-white font-medium mt-12 text-4xl">
+              <AnimatedCounter to={5} />
+            </p>
           </article>
 
           {/* Kotak 2 - Project */}
@@ -41,7 +71,9 @@ const Pencapaian = () => {
           >
             <Image src="/images/icon/iconkepuasan.svg" alt="Project Dibuat" width={48} height={48} priority className="absolute top-4 left-4" />
             <h3 className="text-4xl font-bold text-white absolute top-4 left-28">Project</h3>
-            <p className="text-white font-medium mt-12 text-4xl">0</p>
+            <p className="text-white font-medium mt-12 text-4xl">
+              <AnimatedCounter to={5} />
+            </p>
           </article>
 
           {/* Kotak 3 - Kepuasan Klien */}
@@ -54,7 +86,9 @@ const Pencapaian = () => {
           >
             <Image src="/images/icon/iconkepuasan.svg" alt="Kepuasan Klien" width={48} height={48} priority className="absolute top-4 left-4" />
             <h3 className="text-4xl font-bold text-white absolute top-4 left-28">Kepuasan</h3>
-            <p className="text-white font-medium mt-12 text-4xl">0%</p>
+            <p className="text-white font-medium mt-12 text-4xl">
+              <AnimatedCounter to={100} isPercent />
+            </p>
           </article>
         </div>
       </div>
