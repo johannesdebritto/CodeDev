@@ -27,19 +27,19 @@ const Testimoni = () => {
 
   const getPosition = (index: number) => {
     const distance = (index - activeIndex + images.length) % images.length;
-    const spacing = windowWidth <= 768 ? 70 : 120; // lebih rapat dari sebelumnya
+    const spacing = windowWidth <= 768 ? 40 : 80; // jarak antar gambar didekatkan
 
     switch (distance) {
       case 0:
-        return { x: "0%", scale: 1.1, zIndex: 5, opacity: 1 };
+        return { x: "0%", scale: 1.2, zIndex: 5, opacity: 1 };
       case 1:
-        return { x: `-${spacing}%`, scale: 0.9, zIndex: 3, opacity: 0.7 };
+        return { x: `-${spacing}%`, scale: 1, zIndex: 3, opacity: 0.8 };
       case 2:
-        return { x: `-${spacing * 2}%`, scale: 0.75, zIndex: 2, opacity: 0.5 };
+        return { x: `-${spacing * 2}%`, scale: 0.85, zIndex: 2, opacity: 0.6 };
       case 3:
-        return { x: `${spacing * 2}%`, scale: 0.75, zIndex: 2, opacity: 0.5 };
+        return { x: `${spacing * 2}%`, scale: 0.85, zIndex: 2, opacity: 0.6 };
       case 4:
-        return { x: `${spacing}%`, scale: 0.9, zIndex: 3, opacity: 0.7 };
+        return { x: `${spacing}%`, scale: 1, zIndex: 3, opacity: 0.8 };
       default:
         return { opacity: 0 };
     }
@@ -61,7 +61,7 @@ const Testimoni = () => {
         </h2>
       </div>
 
-      <div className="relative flex items-center justify-center h-[280px] md:h-[320px] overflow-hidden">
+      <div className="relative flex items-center justify-center h-[300px] md:h-[360px] overflow-hidden">
         {images.map((image, index) => {
           const positionStyle = getPosition(index);
           return (
@@ -70,7 +70,7 @@ const Testimoni = () => {
               className="absolute transition-all duration-500"
               animate={positionStyle}
               style={{
-                width: windowWidth <= 768 ? "130px" : "180px",
+                width: windowWidth <= 768 ? "180px" : "240px", // diperbesar
               }}
             >
               <Image src={image.src} alt={image.alt} width={300} height={300} className="rounded-lg w-full h-auto" priority={index === activeIndex} />
