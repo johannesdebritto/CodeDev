@@ -18,11 +18,11 @@ const Testimoni = () => {
   }, []);
 
   const images = [
-    { src: "/images/icondekstop/komen1.svg", alt: "Testimoni pelanggan 1" },
-    { src: "/images/icondekstop/komen2.svg", alt: "Testimoni pelanggan 2" },
-    { src: "/images/icondekstop/komen3.svg", alt: "Testimoni pelanggan 3" },
-    { src: "/images/icondekstop/komen1.svg", alt: "Testimoni pelanggan 4" },
-    { src: "/images/icondekstop/komen2.svg", alt: "Testimoni pelanggan 5" },
+    { src: "/images/testimoni1.png", alt: "Testimoni pelanggan 1" },
+    { src: "/images/estimoni2.png", alt: "Testimoni pelanggan 2" },
+    { src: "/images/estimoni3.png", alt: "Testimoni pelanggan 3" },
+    { src: "/images/estimoni4.png", alt: "Testimoni pelanggan 4" },
+    { src: "/images/estimoni5.png", alt: "Testimoni pelanggan 5" },
   ];
 
   const getPosition = (index: number) => {
