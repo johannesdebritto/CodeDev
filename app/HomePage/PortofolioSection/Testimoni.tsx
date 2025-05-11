@@ -27,19 +27,19 @@ const Testimoni = () => {
 
   const getPosition = (index: number) => {
     const distance = (index - activeIndex + images.length) % images.length;
-    const spacing = windowWidth <= 768 ? 50 : 80; // diperpendek jaraknya
+    const spacing = windowWidth <= 768 ? 70 : 120; // lebih rapat dari sebelumnya
 
     switch (distance) {
       case 0:
-        return { x: "0%", scale: 1.25, zIndex: 5, opacity: 1 };
+        return { x: "0%", scale: 1.1, zIndex: 5, opacity: 1 };
       case 1:
-        return { x: `-${spacing}%`, scale: 1.05, zIndex: 3, opacity: 0.8 };
+        return { x: `-${spacing}%`, scale: 0.9, zIndex: 3, opacity: 0.7 };
       case 2:
-        return { x: `-${spacing * 2}%`, scale: 0.9, zIndex: 2, opacity: 0.6 };
+        return { x: `-${spacing * 2}%`, scale: 0.75, zIndex: 2, opacity: 0.5 };
       case 3:
-        return { x: `${spacing * 2}%`, scale: 0.9, zIndex: 2, opacity: 0.6 };
+        return { x: `${spacing * 2}%`, scale: 0.75, zIndex: 2, opacity: 0.5 };
       case 4:
-        return { x: `${spacing}%`, scale: 1.05, zIndex: 3, opacity: 0.8 };
+        return { x: `${spacing}%`, scale: 0.9, zIndex: 3, opacity: 0.7 };
       default:
         return { opacity: 0 };
     }
@@ -61,7 +61,7 @@ const Testimoni = () => {
         </h2>
       </div>
 
-      <div className="relative flex items-center justify-center h-[320px] md:h-[400px] overflow-hidden">
+      <div className="relative flex items-center justify-center h-[280px] md:h-[320px] overflow-hidden">
         {images.map((image, index) => {
           const positionStyle = getPosition(index);
           return (
@@ -70,10 +70,10 @@ const Testimoni = () => {
               className="absolute transition-all duration-500"
               animate={positionStyle}
               style={{
-                width: windowWidth <= 768 ? "150px" : "230px",
+                width: windowWidth <= 768 ? "130px" : "180px",
               }}
             >
-              <Image src={image.src} alt={image.alt} width={300} height={300} className="rounded-xl w-full h-auto shadow-lg" priority={index === activeIndex} />
+              <Image src={image.src} alt={image.alt} width={300} height={300} className="rounded-lg w-full h-auto" priority={index === activeIndex} />
             </motion.figure>
           );
         })}
